@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "196680247138",
+    "project_id": "ai-mealscan",
+    "storage_bucket": "ai-mealscan.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196680247138:android:574bea4e27904a1ed12e3b",
+        "android_client_info": {
+          "package_name": "com.ezt.meal.ai.scan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWmG8nJVPDCweZmqmK1ZQMJeYDsAKqsBc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

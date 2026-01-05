@@ -1,0 +1,566 @@
+package com.ezt.meal.ai.scan.screen.language
+
+import com.ezt.meal.ai.scan.screen.language.adapter.Language
+import com.ezt.meal.ai.scan.R
+import com.ezt.meal.ai.scan.database.Meal
+import com.ezt.meal.ai.scan.model.MeasurementUnits
+import com.ezt.meal.ai.scan.model.TotalNutrition
+import com.ezt.meal.ai.scan.screen.camera.CameraActivity.Companion.DEFAULT_INGREDIENTS
+
+
+object GlobalConstant {
+    fun getListLocation(): ArrayList<Language> {
+        val listLanguage: ArrayList<Language> = ArrayList()
+        listLanguage.add(Language(R.drawable.english, "English", "en"))
+        listLanguage.add(Language(R.drawable.arabic, "العربية", "ar"))
+        listLanguage.add(Language(R.drawable.bengali, "বাংলা", "bn"))
+        listLanguage.add(Language(R.drawable.german, "Deutsch", "de"))
+        listLanguage.add(Language(R.drawable.spanish, "Español", "es"))
+        listLanguage.add(Language(R.drawable.french, "Français", "fr"))
+        listLanguage.add(Language(R.drawable.hindi, "हिन्दी", "hi"))
+        listLanguage.add(Language(R.drawable.indonesian, "Bahasa", "in"))
+        listLanguage.add(Language(R.drawable.portuguese, "Português", "pt"))
+        listLanguage.add(Language(R.drawable.italia, "Italiano", "it"))
+        listLanguage.add(Language(R.drawable.russia, "Русский", "ru"))
+        listLanguage.add(Language(R.drawable.korean, "한국어", "ko"))
+
+        return listLanguage
+    }
+
+
+    fun getSearchMeals() : ArrayList<Meal> {
+        val listMeals: ArrayList<Meal> = ArrayList()
+        listMeals.add(Meal( dishName = "Pizza Margherita",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 270.0, liquids = 0.0, estimatedAmount = "270.0 g", carbs = 34.0, fats = 9.0, proteins = 12.0, calories = 270.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Cheeseburger",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 450.0, liquids = 0.0, estimatedAmount = "450.0 g", carbs = 40.0, fats = 22.0, proteins = 25.0, calories = 450.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+
+        listMeals.add(Meal( dishName = "Sushi (Salmon Roll)",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 300.0, liquids = 0.0, estimatedAmount = "300.0 g", carbs = 45.0, fats = 6.0, proteins = 12.0, calories = 300.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+
+
+        listMeals.add(Meal( dishName = "Pad Thai",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 400.0, liquids = 0.0, estimatedAmount = "400.0 g", carbs = 34.0, fats = 9.0, proteins = 12.0, calories = 400.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+
+
+        listMeals.add(Meal( dishName = "Pho Bo",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 350.0, liquids = 100.0, estimatedAmount = "270.0 g", carbs = 22.0, fats = 52.0, proteins = 6.0, calories = 350.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+
+
+        listMeals.add(Meal( dishName = "Chicken Curry",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 270.0, liquids = 0.0, estimatedAmount = "270.0 g", carbs = 34.0, fats = 9.0, proteins = 12.0, calories = 270.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+
+
+        listMeals.add(Meal( dishName = "Fish and Chips",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 550.0, liquids = 0.0, estimatedAmount = "550.0 g", carbs = 60.0, fats = 25.0, proteins = 20.0, calories = 550.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+
+
+        listMeals.add(Meal( dishName = "Caesar Salad",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 360.0, liquids = 0.0, estimatedAmount = "360.0 g", carbs = 32.0, fats = 8.0, proteins = 10.0, calories = 360.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+
+        listMeals.add(Meal( dishName = "Spaghetti Carbonara",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 480.0, liquids = 0.0, estimatedAmount = "480.0 g", carbs = 65.0, fats = 16.0, proteins = 18.0, calories = 480.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+
+        listMeals.add(Meal( dishName = "Tacos(Beef)",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 320.0, liquids = 0.0, estimatedAmount = "320.0 g", carbs = 24.0, fats = 18.0, proteins = 16.0, calories = 320.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+
+        listMeals.add(Meal( dishName = "Lasagna",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 420.0, liquids = 0.0, estimatedAmount = "420.0 g", carbs = 38.0, fats = 19.0, proteins = 22.0, calories = 420.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Fried rice (chicken)",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 320.0, liquids = 0.0, estimatedAmount = "320.0 g", carbs = 24.0, fats = 18.0, proteins = 16.0, calories = 320.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Ramen",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 460.0, liquids = 0.0, estimatedAmount = "460.0 g", carbs = 60.0, fats = 18.0, proteins = 15.0, calories = 460.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Dim Sum",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 160.0, liquids = 0.0, estimatedAmount = "160.0 g", carbs = 20.0, fats = 4.0, proteins = 8.0, calories = 160.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Banh Mi",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 400.0, liquids = 0.0, estimatedAmount = "320.0 g", carbs = 50.0, fats = 14.0, proteins = 18.0, calories = 400.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Steak (Ribeye 200g)",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 580.0, liquids = 0.0, estimatedAmount = "580.0 g", carbs = 0.0, fats = 44.0, proteins = 45.0, calories = 580.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Burrito (Bean & Cheese)",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 480.0, liquids = 0.0, estimatedAmount = "480.0 g", carbs = 65.0, fats = 18.0, proteins = 16.0, calories = 480.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Pancakes (with Syrup)",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 350.0, liquids = 0.0, estimatedAmount = "350.0 g", carbs = 70.0, fats = 8.0, proteins = 6.0, calories = 350.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Tom Yum Soup",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 150.0, liquids = 0.0, estimatedAmount = "150.0 g", carbs = 10.0, fats = 8.0, proteins = 12.0, calories = 150.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Tacos(Beef)",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 320.0, liquids = 0.0, estimatedAmount = "320.0 g", carbs = 24.0, fats = 18.0, proteins = 16.0, calories = 320.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Fried Chicken (2 pcs)",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 520.0, liquids = 0.0, estimatedAmount = "520.0 g", carbs = 18.0, fats = 36.0, proteins = 28.0, calories = 520.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Grilled Cheese Sandwich",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 380.0, liquids = 0.0, estimatedAmount = "380.0 g", carbs = 30.0, fats = 24.0, proteins = 12.0, calories = 380.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Kimchi Stew (Kimchi-jjigae)",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 280.0, liquids = 0.0, estimatedAmount = "280.0 g", carbs = 15.0, fats = 16.0, proteins = 18.0, calories = 280.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Falafel Sandwich",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 550.0, liquids = 0.0, estimatedAmount = "550.0 g", carbs = 55.0, fats = 20.0, proteins = 14.0, calories = 550.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Biryani (Chicken)",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 420.0, liquids = 0.0, estimatedAmount = "420.0 g", carbs = 60.0, fats = 12.0, proteins = 22.0, calories = 420.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Croissant",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 260.0, liquids = 0.0, estimatedAmount = "260.0 g", carbs = 28.0, fats = 14.0, proteins = 5.0, calories = 260.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Tacos(Beef)",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 320.0, liquids = 0.0, estimatedAmount = "320.0 g", carbs = 24.0, fats = 18.0, proteins = 16.0, calories = 320.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Donut (Glazed)",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 250.0, liquids = 0.0, estimatedAmount = "250.0 g", carbs = 30.0, fats = 14.0, proteins = 3.0, calories = 250.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "French Fries (Medium)",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 320.0, liquids = 0.0, estimatedAmount = "320.0 g", carbs = 24.0, fats = 18.0, proteins = 16.0, calories = 320.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Greek Salad",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 280.0, liquids = 0.0, estimatedAmount = "280.0 g", carbs = 12.0, fats = 22.0, proteins = 8.0, calories = 280.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Hot Dog",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 290.0, liquids = 0.0, estimatedAmount = "290.0 g", carbs = 24.0, fats = 16.0, proteins = 10.0, calories = 290.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Macaroni and Cheese",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 400.0, liquids = 0.0, estimatedAmount = "400.0 g", carbs = 45.0, fats = 18.0, proteins = 14.0, calories = 400.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Spring Rolls (Fresh)",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 180.0, liquids = 0.0, estimatedAmount = "180.0 g", carbs = 25.0, fats = 3.0, proteins = 10.0, calories = 180.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Tiramisu",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 350.0, liquids = 0.0, estimatedAmount = "350.0 g", carbs = 38.0, fats = 20.0, proteins = 6.0, calories = 350.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Paella",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 420.0, liquids = 0.0, estimatedAmount = "420.0 g", carbs = 55.0, fats = 12.0, proteins = 22.0, calories = 420.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Beef Stew",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 380.0, liquids = 0.0, estimatedAmount = "380.0 g", carbs = 20.0, fats = 22.0, proteins = 25.0, calories = 380.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Bagel with Cream Cheese",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 320.0, liquids = 0.0, estimatedAmount = "320.0 g", carbs = 48.0, fats = 10.0, proteins = 10.0, calories = 320.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Waffles",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 310.0, liquids = 0.0, estimatedAmount = "310.0 g", carbs = 35.0, fats = 15.0, proteins = 7.0, calories = 310.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Miso Soup",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 60.0, liquids = 0.0, estimatedAmount = "60.0 g", carbs = 8.0, fats = 1.0, proteins = 4.0, calories = 60.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Peking Duck (Wrap)",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 350.0, liquids = 0.0, estimatedAmount = "350.0 g", carbs = 30.0, fats = 18.0, proteins = 18.0, calories = 350.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Chili Con Came",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 300.0, liquids = 0.0, estimatedAmount = "300.0 g", carbs = 25.0, fats = 12.0, proteins = 20.0, calories = 300.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Egg Benedict",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 450.0, liquids = 0.0, estimatedAmount = "450.0 g", carbs = 25.0, fats = 30.0, proteins = 20.0, calories = 450.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Hummus (with Pita)",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 380.0, liquids = 0.0, estimatedAmount = "380.0 g", carbs = 24.0, fats = 18.0, proteins = 16.0, calories = 380.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Ratatouille",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 200.0, liquids = 0.0, estimatedAmount = "200.0 g", carbs = 45.0, fats = 18.0, proteins = 12.0, calories = 200.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Gnocchi",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 320.0, liquids = 0.0, estimatedAmount = "320.0 g", carbs = 65.0, fats = 4.0, proteins = 8.0, calories = 320.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Ceviche",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 180.0, liquids = 0.0, estimatedAmount = "180.0 g", carbs = 12.0, fats = 6.0, proteins = 22.0, calories = 180.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Bibimbap",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 480.0, liquids = 0.0, estimatedAmount = "480.0 g", carbs = 75.0, fats = 10.0, proteins = 20.0, calories = 480.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Kebab",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 450.0, liquids = 0.0, estimatedAmount = "450.0 g", carbs = 40.0, fats = 20.0, proteins = 25.0, calories = 450.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        listMeals.add(Meal( dishName = "Clam Chowder",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 320.0, liquids = 0.0, estimatedAmount = "320.0 g", carbs = 22.0, fats = 20.0, proteins = 12.0, calories = 320.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+
+        listMeals.add(Meal( dishName = "Chicken Parmesan",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 550.0, liquids = 0.0, estimatedAmount = "550.0 g", carbs = 35.0, fats = 28.0, proteins = 40.0, calories = 550.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+
+        listMeals.add(Meal( dishName = "Mango Sticky Rice",
+            image = "",
+            ingredients = listOf(),
+            totalNutrition = TotalNutrition(solids = 380.0, liquids = 0.0, estimatedAmount = "380.0 g", carbs = 65.0, fats = 12.0, proteins = 4.0, calories = 380.0),
+            processingTime = 0.0,
+            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
+            healthyScore = -1,
+            status = "success",
+            message = "Food nutrition analyzed successfully", date = 0L))
+        return listMeals
+    }
+
+    fun getTheMealImage(index : Int = 0) : Int {
+       return when(index) {
+            0 -> R.drawable.p1
+            1 -> R.drawable.p2
+            2 -> R.drawable.p3
+            3 -> R.drawable.p4
+            4 -> R.drawable.p5
+            5 -> R.drawable.p6
+            6 -> R.drawable.p7
+            7 -> R.drawable.p8
+            8 -> R.drawable.p9
+            9 -> R.drawable.p10
+            10 -> R.drawable.p11
+            11 -> R.drawable.p12
+            12 -> R.drawable.p13
+            13 -> R.drawable.p14
+            14 -> R.drawable.p15
+            15 -> R.drawable.p16
+            16 -> R.drawable.p17
+            17 -> R.drawable.p18
+            18 -> R.drawable.p19
+            19 -> R.drawable.p20
+            20 -> R.drawable.p21
+            21 -> R.drawable.p22
+            22 -> R.drawable.p23
+            23 -> R.drawable.p24
+            24 -> R.drawable.p25
+            25 -> R.drawable.p26
+            26 -> R.drawable.p27
+            27 -> R.drawable.p28
+            28 -> R.drawable.p29
+            29 -> R.drawable.p30
+            30 -> R.drawable.p31
+            31 -> R.drawable.p32
+            32 -> R.drawable.p33
+            33 -> R.drawable.p34
+            34 -> R.drawable.p35
+            35 -> R.drawable.p36
+            36 -> R.drawable.p37
+            37 -> R.drawable.p38
+            38 -> R.drawable.p39
+            39 -> R.drawable.p40
+            40 -> R.drawable.p41
+            41 -> R.drawable.p42
+            42 -> R.drawable.p43
+            43 -> R.drawable.p44
+            44 -> R.drawable.p45
+            45 -> R.drawable.p46
+            46 -> R.drawable.p47
+            47 -> R.drawable.p48
+            48 -> R.drawable.p49
+            49 -> R.drawable.p50
+            else -> R.drawable.p1
+        }
+    }
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ezt.meal.ai.scan.screen.home.fragment.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_to_recentFragment"
+            app:destination="@id/recentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mealFragment"
+        android:name="com.ezt.meal.ai.scan.screen.home.fragment.MealFragment"
+        android:label="@string/meal"
+        tools:layout="@layout/fragment_meal" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/recentFragment"
+        android:name="com.ezt.meal.ai.scan.screen.home.fragment.RecentFragment"
+        android:label="@string/recent"
+        tools:layout="@layout/fragment_recent" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.ezt.meal.ai.scan.screen.home.fragment.SettingsFragment"
+        android:label="@string/setting"
+        tools:layout="@layout/fragment_settings" >
+    </fragment>
+
+</navigation>

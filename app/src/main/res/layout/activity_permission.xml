@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="@dimen/_40sdp">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/CustomTextStyleSemiBold18sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/permission"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_52sdp" />
+
+    <TextView
+        android:id="@+id/skipBtn"
+        style="@style/CustomTextStyleSemiBold18sp"
+        android:textColor="@color/secondColor"
+        android:padding="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_6sdp"
+        app:layout_constraintTop_toTopOf="@+id/title"
+        app:layout_constraintBottom_toBottomOf="@+id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/camera"
+        android:contentDescription="@string/imageView"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/permission_pic"
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="@dimen/_180sdp" />
+
+
+    <TextView
+        android:id="@+id/grantPermission"
+        style="@style/CustomTextStyle14sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:text="@string/grant_permission"
+        android:textColor="#7A7981"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/camera" />
+
+    <LinearLayout
+        android:id="@+id/enableCamera"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:background="@drawable/background_radius_12_white"
+        android:padding="@dimen/_16sdp"
+        app:layout_constraintTop_toBottomOf="@id/grantPermission"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:contentDescription="@string/imageView"
+            android:src="@drawable/icon_camera"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_26sdp" />
+
+        <TextView
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:gravity="start|center_vertical"
+            android:contentDescription="@string/imageView"
+            android:text="@string/camera"
+            style="@style/CustomTextStyleMedium16sp"
+            android:textColor="@color/customText"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_26sdp" />
+        
+        <ImageView
+            android:id="@+id/cameraStatus"
+            android:contentDescription="@string/imageView"
+            android:src="@drawable/icon_enable"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_24sdp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlNative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <include
+            android:id="@+id/m_loading_view"
+            layout="@layout/native_shimmer_small_screen" />
+
+        <FrameLayout
+            android:id="@+id/frNative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

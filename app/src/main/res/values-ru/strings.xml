@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_grant_Permission">Предоставить разрешение</string>
+    <string name="message_grant_Permission">Пожалуйста, предоставьте все разрешения для доступа к дополнительным функциям.</string>
+    <string name="goto_setting">Перейти в настройки</string>
+    <string name="cancel">Отмена</string>
+    <string name="imageView">imageView</string>
+
+    <string name="language">Язык</string>
+    <string name="english">Английский</string>
+    <string name="hindi">Хинди</string>
+    <string name="spanish">Испанский</string>
+    <string name="french">Французский</string>
+    <string name="arabic">Арабский</string>
+    <string name="bengali">Бенгальский</string>
+    <string name="russian">Русский</string>
+    <string name="portuguese">Португальский</string>
+    <string name="indonesian">Индонезийский</string>
+    <string name="german">Немецкий</string>
+    <string name="italian">Итальянский</string>
+    <string name="korean">Корейский</string>
+
+    <string name="loading">ЗАГРУЗКА</string>
+
+    <string name="intro_1">Легкое отслеживание калорий</string>
+    <string name="intro_sub_1">Сделайте фото, и ИИ рассчитает вашу дневную калорийность.</string>
+    <string name="intro_2">Информация о еде</string>
+    <string name="intro_sub_2">Калории, потребление нутриентов и оценка здоровья будут четко отображены.</string>
+    <string name="intro_3">Отслеживание прогресса</string>
+    <string name="intro_sub_3">Легко достигайте целей, отслеживая прогресс ежедневно.</string>
+    <string name="next">Далее</string>
+    <string name="permission">Разрешение</string>
+    <string name="skip">Пропустить</string>
+    <string name="grant_permission">Разрешите доступ к камере, чтобы легко фотографировать ваши ежедневные блюда.</string>
+    <string name="camera">Камера</string>
+
+    <string name="home">Главная</string>
+    <string name="meal">Блюдо</string>
+    <string name="recent">Недавние</string>
+    <string name="setting">Настройки</string>
+    <string name="invite_searching">Что вы хотите сегодня, друг?</string>
+    <string name="search">Поиск</string>
+    <string name="nutrition_desc">Быстрый расчет калорий</string>
+    <string name="nutrition_title">Поиск еды</string>
+    <string name="scanning_desc">Определение калорий</string>
+    <string name="scanning_title">Сканирование блюда</string>
+    <string name="no_meal_title">Блюда пока не сохранены</string>
+    <string name="no_scan_desc">Добавьте блюда, чтобы получить подробный анализ калорий и нутриентов.</string>
+    <string name="meal_scanning">Сканирование блюда</string>
+    <string name="recent_scans">Последние сканы</string>
+    <string name="see_more">Смотреть больше</string>
+    <string name="general">ОБЩИЕ</string>
+    <string name="set_lang">Настройки языка</string>
+    <string name="set_rating"><![CDATA[Рейтинг и отзыв]]></string>
+    <string name="set_contact">Связаться с нами</string>
+    <string name="set_share">Поделиться с друзьями</string>
+    <string name="set_term">Условия использования</string>
+    <string name="set_policy">Политика конфиденциальности</string>
+
+    <string name="rate_us">Оцените нас</string>
+    <string name="email_feedback_title">Обратная связь %s версия: %s</string>
+    <string name="do_you_want_to_exit_app">Вы хотите выйти из приложения?</string>
+    <string name="exit_app">Выйти из приложения</string>
+    <string name="exit_title">Выйти сейчас!</string>
+    <string name="exit_question">Вы уверены, что хотите выйти из Food Scan?</string>
+    <string name="no">Нет</string>
+    <string name="yes_exit">Да, выйти</string>
+    <string name="guide_title">Для максимально точного распознавания ИИ.</string>
+    <string name="ok">ОК</string>
+    <string name="guide_step_1">Сделайте фронтальное фото одного предмета</string>
+    <string name="guide_step_2">Обеспечьте достаточное освещение и избегайте теней</string>
+    <string name="guide_step_3">Фото должно быть резким и четким, без размытости</string>
+    <string name="fail">Неудача</string>
+    <string name="pass">Успех</string>
+    <string name="meal_pic_title">Сделайте фото сегодняшнего блюда, чтобы посчитать калории.</string>
+    <string name="scan">Сканировать</string>
+
+    <string name="meal_name">●  Название: </string>
+    <string name="meal_type">●  Тип: </string>
+    <string name="meal_ingredient">●  Ингредиенты: </string>
+    <string name="dish_overview">Обзор блюда</string>
+    <string name="meal_size">Предполагаемый размер порции</string>
+    <string name="meal_nutrition">Пищевая ценность</string>
+    <string name="meal_energy">●  Общая энергия: </string>
+    <string name="meal_nutrient">Макронутриенты</string>
+    <string name="total_serve">Общее количество порций</string>
+    <string name="protein">Белки</string>
+    <string name="fat">Жиры</string>
+    <string name="carbohydrates">Углеводы</string>
+    <string name="amount">Количество</string>
+    <string name="nutrient">Питательное вещество</string>
+    <string name="liquid">Жидкость</string>
+    <string name="solid">Твёрдое</string>
+    <string name="today">Сегодня</string>
+    <string name="permission_denied">Доступ запрещен</string>
+    <string name="select_date_warning">Дата окончания должна быть позже даты начала</string>
+    <string name="recognizing">Распознавание…</string>
+    <string name="take_a_few">Этот процесс может занять несколько секунд</string>
+    <string name="start_date">Выберите дату начала</string>
+    <string name="end_date">Выберите дату окончания</string>
+    <string name="detect_failed_desc">Не удалось распознать блюдо. Проверьте соединение с интернетом и сделайте фото снова!</string>
+    <string name="detect_failed">Ошибка распознавания</string>
+    <string name="save_button">Сохранить блюдо в дневник</string>
+    <string name="saved_successfully">Сохранено успешно</string>
+    <string name="analyzing_volume">Анализ объема</string>
+    <string name="analyzing_food">Анализ еды</string>
+    <string name="analyzing_calories">Анализ калорий и питательных веществ.</string>
+
+
+</resources>

@@ -1,0 +1,118 @@
+<resources>
+    <string name="app_name" translatable="false">AI Calo - Meal Plan</string>
+
+    <string name="contact_email" translatable="false">anhtvn96.po@cdtgames.com</string>
+    <string name="admob_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="adjust_token_key" translatable="false"></string>
+    <string name="facebook_id" translatable="false"></string>
+    <string name="facebook_client_token" translatable="false"></string>
+
+    <string name="title_grant_Permission">Grant Permission</string>
+    <string name="message_grant_Permission">Please grant all permissions to access additional functionality.</string>
+    <string name="goto_setting">Go to setting</string>
+    <string name="cancel">Cancel</string>
+    <string name="imageView">imageView</string>
+
+    <string name="language">Language</string>
+    <!--    language-->
+    <string name="english">English</string>
+    <string name="hindi">Hindi</string>
+    <string name="spanish">Spanish</string>
+    <string name="french">French</string>
+    <string name="arabic">Arabic</string>
+    <string name="bengali">Bengali</string>
+    <string name="russian">Russian</string>
+    <string name="portuguese">Portuguese</string>
+    <string name="indonesian">Indonesian</string>
+    <string name="german">German</string>
+    <string name="italian">Italian</string>
+    <string name="korean">Korean</string>
+
+    <string name="loading">LOADING</string>
+
+    <string name="intro_1">Track Calories Easily</string>
+    <string name="intro_sub_1">Take a photo and let AI calculate your daily calorie intake.</string>
+    <string name="intro_2">Food Insights</string>
+    <string name="intro_sub_2">Calorie intake, nutrient intake, and health score will be clearly documented.</string>
+    <string name="intro_3">Track progress</string>
+    <string name="intro_sub_3">Achieve your goals easily by tracking your progress daily.</string>
+    <string name="next">Next</string>
+    <string name="permission">Permission</string>
+    <string name="skip">Skip</string>
+    <string name="grant_permission">Grant camera access so you can easily take pictures of your daily meals.</string>
+    <string name="camera">Camera</string>
+
+    <!--    home-->
+    <string name="home">Home</string>
+    <string name="meal">Meal</string>
+    <string name="recent">Recent</string>
+    <string name="setting">Settings</string>
+    <string name="invite_searching">What are you craving today, buddy?</string>
+    <string name="search">Search</string>
+    <string name="nutrition_desc">Calculate calories quickly</string>
+    <string name="nutrition_title">Search for food</string>
+    <string name="scanning_desc">Calorie count detection</string>
+
+    <string name="scanning_title">Meal scanning</string>
+    <string name="no_meal_title">No meals have been saved yet</string>
+    <string name="no_scan_desc">Add meals to receive a detailed analysis of your calorie intake and nutrient groups</string>
+    <string name="meal_scanning">Meal scanning</string>
+    <string name="recent_scans">Recent Scans</string>
+    <string name="see_more">See more</string>
+    <string name="general">GENERAL</string>
+    <string name="set_lang">Language Settings</string>
+    <string name="set_rating"><![CDATA[Rating & Review]]></string>
+    <string name="set_contact">Contact Us</string>
+    <string name="set_share">Tell Friends</string>
+    <string name="set_term">Terms of Use</string>
+    <string name="set_policy">Privacy Policy</string>
+
+    <string name="rate_us">Rate us</string>
+    <string name="email_feedback_title">Feedback %s version: %s</string>
+    <string name="do_you_want_to_exit_app">Do you want to exit app?</string>
+    <string name="exit_app">Exit app</string>
+    <string name="exit_title">Exit now!</string>
+    <string name="exit_question">Are you sure you want to exit the food scan?</string>
+    <string name="no">No</string>
+    <string name="yes_exit">Yes, Exit</string>
+    <string name="guide_title">For the most accurate AI recognition.</string>
+    <string name="ok">OK</string>
+    <string name="guide_step_1">Take a frontal shot of a single item</string>
+    <string name="guide_step_2">Ensure sufficient lighting and avoid shadows</string>
+    <string name="guide_step_3">The photo should be sharp and clear, without blurriness</string>
+    <string name="fail">Fail</string>
+    <string name="pass">Pass</string>
+    <string name="meal_pic_title">Take a picture of today\'s meal to count calories.</string>
+    <string name="scan">Scan</string>
+
+    <string name="meal_name">●  Name: </string>
+    <string name="meal_type">●  Type: </string>
+    <string name="meal_ingredient">●  Ingredients: </string>
+    <string name="dish_overview">Dish Overview</string>
+    <string name="meal_size">Assumed Serving Size</string>
+    <string name="meal_nutrition">Nutritional Information</string>
+    <string name="meal_energy">●  Total energy: </string>
+    <string name="meal_nutrient">Macronutrients</string>
+    <string name="total_serve">Total serving</string>
+    <string name="protein">Protein</string>
+    <string name="fat">Fat</string>
+    <string name="carbohydrates">Carbohydrates</string>
+    <string name="amount">Amount</string>
+    <string name="nutrient">Nutrient</string>
+    <string name="liquid">Liquid</string>
+    <string name="solid">Solid</string>
+    <string name="today">Today</string>
+    <string name="permission_denied">Permission denied</string>
+    <string name="select_date_warning">End date must be after start date</string>
+    <string name="recognizing">Recognizing…</string>
+    <string name="take_a_few">This process may take a few seconds</string>
+    <string name="start_date">Select the start date</string>
+    <string name="end_date">Select the end date</string>
+    <string name="detect_failed_desc">Can not detect the meal. Please check the internet connection and take a photo again!</string>
+    <string name="detect_failed">Detect failed</string>
+    <string name="save_button">Log meal to diary</string>
+    <string name="saved_successfully">Save successfully</string>
+    <string name="analyzing_volume">Analyzing volume</string>
+    <string name="analyzing_food">Analyzing food</string>
+    <string name="analyzing_calories">Analyzing calories and nutrients.</string>
+</resources>

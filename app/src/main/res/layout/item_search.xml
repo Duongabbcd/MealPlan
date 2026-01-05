@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_8sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/searchMealImage"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay_CustomShape8dp"
+        android:src="@drawable/icon_detail_meal"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="@dimen/_48sdp"
+        android:layout_height="@dimen/_48sdp"/>
+
+    <TextView
+        android:id="@+id/searchMealName"
+        android:text="Salad"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:layout_constraintStart_toEndOf="@id/searchMealImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/CustomTextStyleSemiBold14sp"
+        android:textColor="@color/black"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/searchMealCalory"
+        android:text="294Kcal - 100g"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintStart_toEndOf="@id/searchMealImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchMealName"
+        style="@style/CustomTextStyle14sp"
+        android:textSize="10sp"
+        android:textColor="@color/unselected"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

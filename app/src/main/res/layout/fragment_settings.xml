@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/_40sdp"
+    android:paddingHorizontal="@dimen/_20sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/general"
+        android:text="@string/general"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/text_display"
+        style="@style/CustomTextStyleMedium18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_20sdp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/general"
+        android:background="@drawable/background_radius_24"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/language"
+            android:padding="@dimen/_16sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/langIcon"
+                android:contentDescription="@string/imageView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/icon_lang_setting"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"/>
+
+
+            <TextView
+                android:id="@+id/langTitle"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                style="@style/CustomTextStyleMedium14sp"
+                app:layout_constraintTop_toTopOf="@id/langNext"
+                app:layout_constraintBottom_toBottomOf="@id/langNext"
+                app:layout_constraintEnd_toStartOf="@id/langCurrent"
+                app:layout_constraintStart_toEndOf="@id/langIcon"
+                android:text="@string/set_lang"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/langCurrent"
+                app:layout_constraintTop_toTopOf="@id/langNext"
+                app:layout_constraintBottom_toBottomOf="@id/langNext"
+                app:layout_constraintEnd_toStartOf="@id/langNext"
+                android:text="@string/english"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/langNext"
+                android:contentDescription="@string/imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/icon_next"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rating"
+            android:padding="@dimen/_16sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ratingIcon"
+                android:contentDescription="@string/imageView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/icon_rating"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"/>
+
+
+            <TextView
+                android:id="@+id/ratingTitle"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                style="@style/CustomTextStyleMedium14sp"
+                app:layout_constraintTop_toTopOf="@id/ratingNext"
+                app:layout_constraintBottom_toBottomOf="@id/ratingNext"
+                app:layout_constraintEnd_toStartOf="@id/ratingNext"
+                app:layout_constraintStart_toEndOf="@id/ratingIcon"
+                android:text="@string/set_rating"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+
+            <ImageView
+                android:id="@+id/ratingNext"
+                android:contentDescription="@string/imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/icon_next"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/contact"
+            android:padding="@dimen/_16sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/contactIcon"
+                android:contentDescription="@string/imageView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/icon_contact"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"/>
+
+
+            <TextView
+                android:id="@+id/contactTitle"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                style="@style/CustomTextStyleMedium14sp"
+                app:layout_constraintTop_toTopOf="@id/contactNext"
+                app:layout_constraintBottom_toBottomOf="@id/contactNext"
+                app:layout_constraintEnd_toStartOf="@id/contactNext"
+                app:layout_constraintStart_toEndOf="@id/contactIcon"
+                android:text="@string/set_contact"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+
+            <ImageView
+                android:id="@+id/contactNext"
+                android:contentDescription="@string/imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/icon_next"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/share"
+            android:padding="@dimen/_16sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/shareIcon"
+                android:contentDescription="@string/imageView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/icon_share"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"/>
+
+
+            <TextView
+                android:id="@+id/shareTitle"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                style="@style/CustomTextStyleMedium14sp"
+                app:layout_constraintTop_toTopOf="@id/shareNext"
+                app:layout_constraintBottom_toBottomOf="@id/shareNext"
+                app:layout_constraintEnd_toStartOf="@id/shareNext"
+                app:layout_constraintStart_toEndOf="@id/shareIcon"
+                android:text="@string/set_share"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+
+            <ImageView
+                android:id="@+id/shareNext"
+                android:contentDescription="@string/imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/icon_next"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/term"
+            android:padding="@dimen/_16sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/termIcon"
+                android:contentDescription="@string/imageView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/icon_term"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"/>
+
+
+            <TextView
+                android:id="@+id/termTitle"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                style="@style/CustomTextStyleMedium14sp"
+                app:layout_constraintTop_toTopOf="@id/termNext"
+                app:layout_constraintBottom_toBottomOf="@id/termNext"
+                app:layout_constraintEnd_toStartOf="@id/termNext"
+                app:layout_constraintStart_toEndOf="@id/termIcon"
+                android:text="@string/set_term"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+
+            <ImageView
+                android:id="@+id/termNext"
+                android:contentDescription="@string/imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/icon_next"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/policy"
+            android:padding="@dimen/_16sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/policyIcon"
+                android:contentDescription="@string/imageView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/icon_policy"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"/>
+
+
+            <TextView
+                android:id="@+id/policyTitle"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                style="@style/CustomTextStyleMedium14sp"
+                app:layout_constraintTop_toTopOf="@id/policyNext"
+                app:layout_constraintBottom_toBottomOf="@id/policyNext"
+                app:layout_constraintEnd_toStartOf="@id/policyNext"
+                app:layout_constraintStart_toEndOf="@id/policyIcon"
+                android:text="@string/set_policy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+
+            <ImageView
+                android:id="@+id/policyNext"
+                android:contentDescription="@string/imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/icon_next"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

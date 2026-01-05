@@ -1,0 +1,119 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:layout_gravity="bottom">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/frameLayout"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabScanner"
+        android:src="@drawable/icon_scanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_anchor="@id/bar" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_48sdp"
+        android:layout_gravity="bottom"
+        app:fabCradleVerticalOffset="@dimen/_4sdp"
+        app:fabCradleRoundedCornerRadius="@dimen/_10sdp"
+        app:fabAlignmentModeEndMargin="@dimen/_10sdp"
+        android:backgroundTint="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/home"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableTop="@drawable/icon_home"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:text="@string/home"
+                android:textAllCaps="false"
+                android:textColor="@color/unselected">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/search"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableTop="@drawable/icon_search_gray"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:text="@string/search"
+                android:textAllCaps="false"
+                android:textColor="@color/unselected">
+
+            </TextView>
+
+            <TextView
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/recent"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableTop="@drawable/icon_recent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:textAllCaps="false"
+                android:text="@string/recent"
+                android:textColor="@color/unselected">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/settings"
+               style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableTop="@drawable/icon_setting"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:text="@string/setting"
+                android:textAllCaps="false"
+                android:textColor="@color/unselected">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

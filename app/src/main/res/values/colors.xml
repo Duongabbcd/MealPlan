@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="black_0_2">#33000000</color>
+    <color name="black_0_3">#4D000000</color>
+    <color name="black_0_5">#80000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_0_2">#33FFFFFF</color>
+    <color name="white_0_3">#4DFFFFFF</color>
+
+    <color name="float_transparent">#00000000</color>
+    <color name="customGray">#616161</color>
+    <color name="no_result">#00000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="text_display">#030203</color>
+    <color name="tab_select">#15AD72</color>
+    <color name="customText">#1F2937</color>
+
+    <!--    ads color-->
+    <color name="select_title">#3A236D</color>
+    <color name="button_language">#8246FF</color>
+    <color name="main_color">#8246FF</color>
+    <color name="blue_grey_700">#455A64</color>
+    <color name="defaultGray">#ECECEC</color>
+    <color name="customBlack_0_5">#80323232</color>
+    <color name="subTitle">#2C2C2C</color>
+    <color name="ad_btn">#00C377</color>
+    <color name="text_color">#101010</color>
+
+    <!--    custom-->
+    <color name="upper_bg">#E7F6FF</color>
+    <color name="lower_bg">#FDEFFD</color>
+    <color name="unselected">#7A7981</color>
+    <color name="background">#E6E6E6</color>
+    <color name="nutrients">#E0E0E0</color>
+    <color name="secondColor">#09B64D</color>
+    <color name="protein">#90CD1F</color>
+    <color name="carbs">#F58638</color>
+    <color name="fat">#4B93E5</color>
+</resources>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_grant_Permission">अनुमति दें</string>
+    <string name="message_grant_Permission">कृपया सभी अनुमतियाँ दें ताकि अतिरिक्त कार्यक्षमता का उपयोग किया जा सके।</string>
+    <string name="goto_setting">सेटिंग पर जाएँ</string>
+    <string name="cancel">रद्द करें</string>
+    <string name="imageView">इमेज व्यू</string>
+
+    <string name="language">भाषा</string>
+    <string name="english">अंग्रेज़ी</string>
+    <string name="hindi">हिंदी</string>
+    <string name="spanish">स्पेनिश</string>
+    <string name="french">फ्रेंच</string>
+    <string name="arabic">अरबी</string>
+    <string name="bengali">बंगाली</string>
+    <string name="russian">रूसी</string>
+    <string name="portuguese">पुर्तगाली</string>
+    <string name="indonesian">इंडोनेशियाई</string>
+    <string name="german">जर्मन</string>
+    <string name="italian">इतालवी</string>
+    <string name="korean">कोरियाई</string>
+
+    <string name="loading">लोड हो रहा है</string>
+
+    <string name="intro_1">कैलोरी आसानी से ट्रैक करें</string>
+    <string name="intro_sub_1">फोटो लें और AI को आपके दैनिक कैलोरी सेवन की गणना करने दें।</string>
+    <string name="intro_2">भोजन संबंधी जानकारी</string>
+    <string name="intro_sub_2">कैलोरी सेवन, पोषक तत्व और स्वास्थ्य स्कोर स्पष्ट रूप से दिखाया जाएगा।</string>
+    <string name="intro_3">प्रगति ट्रैक करें</string>
+    <string name="intro_sub_3">दैनिक प्रगति को ट्रैक करके अपने लक्ष्य आसानी से प्राप्त करें।</string>
+    <string name="next">अगला</string>
+    <string name="permission">अनुमति</string>
+    <string name="skip">छोड़ें</string>
+    <string name="grant_permission">कैमरे की अनुमति दें ताकि आप अपने दैनिक भोजन की तस्वीरें आसानी से ले सकें।</string>
+    <string name="camera">कैमरा</string>
+
+    <string name="home">होम</string>
+    <string name="meal">भोजन</string>
+    <string name="recent">हाल ही में</string>
+    <string name="setting">सेटिंग्स</string>
+    <string name="invite_searching">आज आपको क्या खाने का मन है?</string>
+    <string name="search">खोजें</string>
+    <string name="nutrition_desc">कैलोरी जल्दी गणना करें</string>
+    <string name="nutrition_title">भोजन खोजें</string>
+    <string name="scanning_desc">कैलोरी गणना</string>
+
+    <string name="scanning_title">भोजन स्कैन</string>
+    <string name="no_meal_title">अभी तक कोई भोजन सहेजा नहीं गया है</string>
+    <string name="no_scan_desc">विस्तृत कैलोरी और पोषक तत्व विश्लेषण के लिए भोजन जोड़ें</string>
+    <string name="meal_scanning">भोजन स्कैन</string>
+    <string name="recent_scans">हाल ही में स्कैन किए गए</string>
+    <string name="see_more">और देखें</string>
+    <string name="general">सामान्य</string>
+    <string name="set_lang">भाषा सेटिंग्स</string>
+    <string name="set_rating">रेटिंग और समीक्षा</string>
+    <string name="set_contact">संपर्क करें</string>
+    <string name="set_share">मित्रों को बताएं</string>
+    <string name="set_term">उपयोग की शर्तें</string>
+    <string name="set_policy">गोपनीयता नीति</string>
+
+    <string name="rate_us">हमें रेट करें</string>
+    <string name="email_feedback_title">प्रतिक्रिया %s संस्करण: %s</string>
+    <string name="do_you_want_to_exit_app">क्या आप ऐप से बाहर जाना चाहते हैं?</string>
+    <string name="exit_app">एप्लिकेशन बंद करें</string>
+    <string name="exit_title">अभी बाहर जाएँ!</string>
+    <string name="exit_question">क्या आप वाकई फूड स्कैन छोड़ना चाहते हैं?</string>
+    <string name="no">नहीं</string>
+    <string name="yes_exit">हाँ, बाहर जाएँ</string>
+    <string name="guide_title">सबसे सटीक AI पहचान के लिए।</string>
+    <string name="ok">ठीक है</string>
+    <string name="guide_step_1">एक वस्तु का सामने का फोटो लें</string>
+    <string name="guide_step_2">पर्याप्त रोशनी सुनिश्चित करें और छायाओं से बचें</string>
+    <string name="guide_step_3">फोटो स्पष्ट और तेज़ होना चाहिए, धुंधला नहीं</string>
+    <string name="fail">असफल</string>
+    <string name="pass">सफल</string>
+    <string name="meal_pic_title">आज के भोजन की फोटो लें ताकि कैलोरी गिनी जा सके।</string>
+    <string name="scan">स्कैन</string>
+
+    <string name="meal_name">●  नाम: </string>
+    <string name="meal_type">●  प्रकार: </string>
+    <string name="meal_ingredient">●  सामग्री: </string>
+    <string name="dish_overview">डिश अवलोकन</string>
+    <string name="meal_size">अनुमानित सर्विंग साइज</string>
+    <string name="meal_nutrition">पोषण जानकारी</string>
+    <string name="meal_energy">●  कुल ऊर्जा: </string>
+    <string name="meal_nutrient">मैक्रो न्यूट्रिएंट्स</string>
+    <string name="total_serve">कुल सर्विंग</string>
+    <string name="protein">प्रोटीन</string>
+    <string name="fat">वसा</string>
+    <string name="carbohydrates">कार्बोहाइड्रेट</string>
+    <string name="amount">मात्रा</string>
+    <string name="nutrient">पोषक तत्व</string>
+    <string name="liquid">तरल</string>
+    <string name="solid">ठोस</string>
+    <string name="today">आज</string>
+    <string name="permission_denied">अनुमति अस्वीकृत</string>
+    <string name="select_date_warning">समाप्ति तिथि प्रारंभ तिथि के बाद होनी चाहिए</string>
+    <string name="recognizing">पहचान रहा है…</string>
+    <string name="take_a_few">यह प्रक्रिया कुछ सेकंड ले सकती है</string>
+    <string name="start_date">प्रारंभ तिथि चुनें</string>
+    <string name="end_date">समाप्ति तिथि चुनें</string>
+    <string name="detect_failed_desc">भोजन का पता नहीं चल सका। कृपया इंटरनेट कनेक्शन जांचें और फोटो फिर से लें!</string>
+    <string name="detect_failed">पता लगाने में विफल</string>
+    <string name="save_button">भोजन को डायरी में लॉग करें</string>
+    <string name="saved_successfully">सफलतापूर्वक सहेजा गया</string>
+    <string name="analyzing_volume">वॉल्यूम का विश्लेषण</string>
+    <string name="analyzing_food">भोजन का विश्लेषण</string>
+    <string name="analyzing_calories">कैलोरी और पोषक तत्वों का विश्लेषण।</string>
+
+</resources>

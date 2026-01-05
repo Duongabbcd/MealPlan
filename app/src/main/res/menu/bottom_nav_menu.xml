@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" android:theme="@style/ThemeLight">
+
+    <item android:title="@string/home"
+        android:icon="@drawable/icon_home"
+        android:id="@+id/homeFragment"/>
+
+    <item android:title="@string/meal"
+        android:icon="@drawable/icon_meal"
+        android:id="@+id/mealFragment"/>
+
+    <item android:title="@string/recent"
+        android:icon="@drawable/icon_diary"
+        android:id="@+id/recentFragment"/>
+
+
+    <item android:title="@string/setting"
+        android:icon="@drawable/icon_setting"
+        android:id="@+id/settingFragment"/>
+</menu>

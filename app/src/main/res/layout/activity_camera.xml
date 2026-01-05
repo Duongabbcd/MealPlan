@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_80sdp"
+        android:background="@color/black_0_5"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/backBtn"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:contentDescription="@string/imageView"
+        android:padding="@dimen/_2sdp"
+        android:src="@drawable/icon_back_white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/flashIcon"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:contentDescription="@string/imageView"
+        android:padding="@dimen/_2sdp"
+        android:src="@drawable/icon_flash"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/guideBtn"
+        app:layout_constraintTop_toTopOf="@id/backBtn" />
+
+
+    <ImageView
+        android:id="@+id/guideBtn"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:contentDescription="@string/imageView"
+        android:padding="@dimen/_2sdp"
+        android:src="@drawable/icon_guide"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/backBtn" />
+
+    <View
+        android:id="@+id/mainView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toBottomOf="@id/backBtn" />
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.ezt.meal.ai.scan.screen.camera.customview.SquareHoleOverlayView
+        android:id="@+id/overlayView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/backBtn" />
+
+
+    <ImageView
+        android:id="@+id/topLeft"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginEnd="-36dp"
+        android:layout_marginBottom="-36dp"
+        android:contentDescription="@string/imageView"
+        android:src="@drawable/top_left"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/mainView"
+        app:layout_constraintEnd_toStartOf="@id/mainView" />
+
+
+    <ImageView
+        android:id="@+id/topRight"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="-36dp"
+        android:layout_marginBottom="-36dp"
+        android:contentDescription="@string/imageView"
+        android:src="@drawable/top_right"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/mainView"
+        app:layout_constraintStart_toEndOf="@id/mainView" />
+
+    <ImageView
+        android:id="@+id/bottomLeft"
+        android:layout_width="@dimen/_10sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginEnd="-36dp"
+        android:contentDescription="@string/imageView"
+        android:src="@drawable/bottom_left"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@id/mainView"
+        app:layout_constraintTop_toBottomOf="@id/mainView" />
+
+
+    <ImageView
+        android:id="@+id/bottomRight"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="-36dp"
+        android:layout_marginTop="-36dp"
+        android:contentDescription="@string/imageView"
+        android:src="@drawable/bottom_right"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@id/mainView"
+        app:layout_constraintTop_toBottomOf="@id/mainView" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalGuideline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <LinearLayout
+        android:id="@+id/analyzingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/recognizing"
+            style="@style/CustomTextStyleBold20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/recognizing"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/takeAFew"
+            style="@style/CustomTextStyle14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/take_a_few"
+            android:textColor="@color/white" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/foodAnalyze"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginHorizontal="@dimen/_60sdp"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/foodProgress"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="match_parent"
+                android:indeterminateTint="@color/white"
+                android:padding="@dimen/_4sdp"
+                app:layout_constraintEnd_toStartOf="@id/foodTitle"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/foodIcon"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/imageView"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/icon_language"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@id/foodTitle"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/foodTitle"
+                style="@style/CustomTextStyle14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/analyzing_food"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/volumeAnalyze"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginHorizontal="@dimen/_60sdp"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/volumeProgress"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="match_parent"
+                android:indeterminateTint="@color/white"
+                android:padding="@dimen/_4sdp"
+                app:layout_constraintEnd_toStartOf="@id/volumeTitle"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/volumeIcon"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/imageView"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/icon_language"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@id/volumeTitle"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/volumeTitle"
+                style="@style/CustomTextStyle14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/analyzing_volume"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/caloryAnalyze"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginHorizontal="@dimen/_60sdp"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/caloryProgress"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="match_parent"
+                android:indeterminateTint="@color/white"
+                android:padding="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                app:layout_constraintEnd_toStartOf="@id/caloryTitle"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/caloryIcon"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/imageView"
+                android:padding="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:src="@drawable/icon_language"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@id/caloryTitle"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/caloryTitle"
+                style="@style/CustomTextStyle14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/analyzing_calories"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/bottomController"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_16sdp"
+        android:paddingVertical="@dimen/_6sdp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/gallery"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_48sdp"
+            android:layout_weight="1"
+            android:contentDescription="@string/imageView"
+            android:src="@drawable/icon_gallery"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/takePhoto"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_56sdp"
+            android:layout_weight="1"
+            android:contentDescription="@string/imageView"
+            android:src="@drawable/icon_take_photo" />
+
+        <ImageView
+            android:id="@+id/reverseCam"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_48sdp"
+            android:layout_weight="1"
+            android:contentDescription="@string/imageView"
+            android:src="@drawable/icon_reverse_cam"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

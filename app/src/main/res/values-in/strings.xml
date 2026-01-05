@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_grant_Permission">Concedi Autorizzazione</string>
+    <string name="message_grant_Permission">Si prega di concedere tutte le autorizzazioni per accedere a funzionalità aggiuntive.</string>
+    <string name="goto_setting">Vai alle impostazioni</string>
+    <string name="cancel">Annulla</string>
+    <string name="imageView">Visualizza immagine</string>
+
+    <string name="language">Lingua</string>
+    <string name="english">Inglese</string>
+    <string name="hindi">Hindi</string>
+    <string name="spanish">Spagnolo</string>
+    <string name="french">Francese</string>
+    <string name="arabic">Arabo</string>
+    <string name="bengali">Bengalese</string>
+    <string name="russian">Russo</string>
+    <string name="portuguese">Portoghese</string>
+    <string name="indonesian">Indonesiano</string>
+    <string name="german">Tedesco</string>
+    <string name="italian">Italiano</string>
+    <string name="korean">Coreano</string>
+
+    <string name="loading">CARICAMENTO</string>
+
+    <string name="intro_1">Traccia facilmente le calorie</string>
+    <string name="intro_sub_1">Scatta una foto e lascia che l\'AI calcoli l\'apporto calorico giornaliero.</string>
+    <string name="intro_2">Informazioni sugli alimenti</string>
+    <string name="intro_sub_2">Apporto calorico, nutrienti e punteggio di salute saranno chiaramente documentati.</string>
+    <string name="intro_3">Traccia i progressi</string>
+    <string name="intro_sub_3">Raggiungi facilmente i tuoi obiettivi monitorando i progressi quotidiani.</string>
+    <string name="next">Avanti</string>
+    <string name="permission">Autorizzazione</string>
+    <string name="skip">Salta</string>
+    <string name="grant_permission">Concedi accesso alla fotocamera per scattare facilmente foto dei pasti quotidiani.</string>
+    <string name="camera">Fotocamera</string>
+
+    <string name="home">Home</string>
+    <string name="meal">Pasto</string>
+    <string name="recent">Recenti</string>
+    <string name="setting">Impostazioni</string>
+    <string name="invite_searching">Cosa vuoi mangiare oggi?</string>
+    <string name="search">Cerca</string>
+    <string name="nutrition_desc">Calcola calorie rapidamente</string>
+    <string name="nutrition_title">Cerca cibo</string>
+    <string name="scanning_desc">Rilevamento calorie</string>
+
+    <string name="scanning_title">Scansione pasto</string>
+    <string name="no_meal_title">Nessun pasto salvato</string>
+    <string name="no_scan_desc">Aggiungi pasti per ricevere un\'analisi dettagliata delle calorie e dei nutrienti</string>
+    <string name="meal_scanning">Scansione pasto</string>
+    <string name="recent_scans">Scansioni recenti</string>
+    <string name="see_more">Vedi di più</string>
+    <string name="general">GENERALE</string>
+    <string name="set_lang">Impostazioni lingua</string>
+    <string name="set_rating">Valutazione e recensione</string>
+    <string name="set_contact">Contattaci</string>
+    <string name="set_share">Condividi con amici</string>
+    <string name="set_term">Termini di utilizzo</string>
+    <string name="set_policy">Informativa sulla privacy</string>
+
+    <string name="rate_us">Valutaci</string>
+    <string name="email_feedback_title">Feedback %s versione: %s</string>
+    <string name="do_you_want_to_exit_app">Vuoi uscire dall\'app?</string>
+    <string name="exit_app">Esci dall\'app</string>
+    <string name="exit_title">Esci ora!</string>
+    <string name="exit_question">Sei sicuro di voler uscire dallo scan del cibo?</string>
+    <string name="no">No</string>
+    <string name="yes_exit">Sì, Esci</string>
+    <string name="guide_title">Per il riconoscimento AI più accurato.</string>
+    <string name="ok">OK</string>
+    <string name="guide_step_1">Scatta una foto frontale di un singolo articolo</string>
+    <string name="guide_step_2">Assicurati di avere una buona illuminazione e evita ombre</string>
+    <string name="guide_step_3">La foto deve essere nitida e chiara, senza sfocature</string>
+    <string name="fail">Fallito</string>
+    <string name="pass">Riuscito</string>
+    <string name="meal_pic_title">Scatta una foto del pasto di oggi per contare le calorie.</string>
+    <string name="scan">Scansiona</string>
+
+    <string name="meal_name">●  Nome: </string>
+    <string name="meal_type">●  Tipo: </string>
+    <string name="meal_ingredient">●  Ingredienti: </string>
+    <string name="dish_overview">Panoramica del piatto</string>
+    <string name="meal_size">Dimensione porzione stimata</string>
+    <string name="meal_nutrition">Informazioni nutrizionali</string>
+    <string name="meal_energy">●  Energia totale: </string>
+    <string name="meal_nutrient">Macronutrienti</string>
+    <string name="total_serve">Porzioni totali</string>
+    <string name="protein">Proteine</string>
+    <string name="fat">Grassi</string>
+    <string name="carbohydrates">Carboidrati</string>
+    <string name="amount">Quantità</string>
+    <string name="nutrient">Nutriente</string>
+    <string name="liquid">Liquido</string>
+    <string name="solid">Solido</string>
+    <string name="today">Oggi</string>
+    <string name="permission_denied">Autorizzazione negata</string>
+    <string name="select_date_warning">La data di fine deve essere successiva alla data di inizio</string>
+    <string name="recognizing">Riconoscimento…</string>
+    <string name="take_a_few">Questo processo può richiedere alcuni secondi</string>
+    <string name="start_date">Seleziona la data di inizio</string>
+    <string name="end_date">Seleziona la data di fine</string>
+    <string name="detect_failed_desc">Impossibile rilevare il pasto. Controlla la connessione internet e scatta nuovamente la foto!</string>
+    <string name="detect_failed">Rilevamento fallito</string>
+    <string name="save_button">Registra pasto nel diario</string>
+    <string name="saved_successfully">Salvato con successo</string>
+    <string name="analyzing_volume">Analisi volume</string>
+    <string name="analyzing_food">Analisi cibo</string>
+    <string name="analyzing_calories">Analisi calorie e nutrienti.</string>
+
+</resources>

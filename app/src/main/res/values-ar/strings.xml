@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_grant_Permission">منح الإذن</string>
+    <string name="message_grant_Permission">يرجى منح جميع الأذونات للوصول إلى وظائف إضافية.</string>
+    <string name="goto_setting">الانتقال إلى الإعدادات</string>
+    <string name="cancel">إلغاء</string>
+    <string name="imageView">عرض الصورة</string>
+
+    <string name="language">اللغة</string>
+    <!-- language -->
+    <string name="english">الإنجليزية</string>
+    <string name="hindi">الهندية</string>
+    <string name="spanish">الإسبانية</string>
+    <string name="french">الفرنسية</string>
+    <string name="arabic">العربية</string>
+    <string name="bengali">البنغالية</string>
+    <string name="russian">الروسية</string>
+    <string name="portuguese">البرتغالية</string>
+    <string name="indonesian">الإندونيسية</string>
+    <string name="german">الألمانية</string>
+    <string name="italian">الإيطالية</string>
+    <string name="korean">الكورية</string>
+
+    <string name="loading">جاري التحميل</string>
+
+    <string name="intro_1">تتبع السعرات الحرارية بسهولة</string>
+    <string name="intro_sub_1">التقط صورة ودع الذكاء الاصطناعي يحسب استهلاكك اليومي من السعرات الحرارية.</string>
+    <string name="intro_2">معلومات غذائية</string>
+    <string name="intro_sub_2">سيتم توثيق السعرات الحرارية والعناصر الغذائية والتقييم الصحي بوضوح.</string>
+    <string name="intro_3">تتبع التقدم</string>
+    <string name="intro_sub_3">حقق أهدافك بسهولة من خلال تتبع تقدمك يوميًا.</string>
+    <string name="next">التالي</string>
+    <string name="permission">الأذونات</string>
+    <string name="skip">تخطي</string>
+    <string name="grant_permission">امنح إذن الكاميرا لتتمكن من التقاط صور وجباتك اليومية بسهولة.</string>
+    <string name="camera">الكاميرا</string>
+
+    <!-- home -->
+    <string name="home">الرئيسية</string>
+    <string name="meal">وجبة</string>
+    <string name="recent">الأخيرة</string>
+    <string name="setting">الإعدادات</string>
+    <string name="invite_searching">ماذا تشتهي اليوم يا صديقي؟</string>
+    <string name="search">بحث</string>
+    <string name="nutrition_desc">احسب السعرات الحرارية بسرعة</string>
+    <string name="nutrition_title">ابحث عن الطعام</string>
+    <string name="scanning_desc">اكتشاف عدد السعرات الحرارية</string>
+
+    <string name="scanning_title">مسح الوجبة</string>
+    <string name="no_meal_title">لم يتم حفظ أي وجبات بعد</string>
+    <string name="no_scan_desc">أضف وجبات للحصول على تحليل مفصل للسعرات الحرارية والعناصر الغذائية</string>
+    <string name="meal_scanning">مسح الوجبة</string>
+    <string name="recent_scans">عمليات المسح الأخيرة</string>
+    <string name="see_more">عرض المزيد</string>
+    <string name="general">عام</string>
+    <string name="set_lang">إعدادات اللغة</string>
+    <string name="set_rating">التقييم والمراجعة</string>
+    <string name="set_contact">اتصل بنا</string>
+    <string name="set_share">أخبر الأصدقاء</string>
+    <string name="set_term">شروط الاستخدام</string>
+    <string name="set_policy">سياسة الخصوصية</string>
+
+    <string name="rate_us">قيّمنا</string>
+    <string name="email_feedback_title">ملاحظات %s الإصدار: %s</string>
+    <string name="do_you_want_to_exit_app">هل تريد الخروج من التطبيق؟</string>
+    <string name="exit_app">الخروج من التطبيق</string>
+    <string name="exit_title">الخروج الآن!</string>
+    <string name="exit_question">هل أنت متأكد أنك تريد الخروج من مسح الطعام؟</string>
+    <string name="no">لا</string>
+    <string name="yes_exit">نعم، خروج</string>
+    <string name="guide_title">للحصول على أدق نتائج التعرف بالذكاء الاصطناعي.</string>
+    <string name="ok">حسنًا</string>
+    <string name="guide_step_1">التقط صورة أمامية لعنصر واحد</string>
+    <string name="guide_step_2">تأكد من وجود إضاءة كافية وتجنب الظلال</string>
+    <string name="guide_step_3">يجب أن تكون الصورة واضحة وحادة دون تشويش</string>
+    <string name="fail">فشل</string>
+    <string name="pass">نجاح</string>
+    <string name="meal_pic_title">التقط صورة لوجبة اليوم لحساب السعرات الحرارية.</string>
+    <string name="scan">مسح</string>
+
+    <string name="meal_name">●  الاسم: </string>
+    <string name="meal_type">●  النوع: </string>
+    <string name="meal_ingredient">●  المكونات: </string>
+    <string name="dish_overview">نظرة عامة على الطبق</string>
+    <string name="meal_size">حجم الحصة المفترض</string>
+    <string name="meal_nutrition">المعلومات الغذائية</string>
+    <string name="meal_energy">●  إجمالي الطاقة: </string>
+    <string name="meal_nutrient">العناصر الغذائية الكبرى</string>
+    <string name="total_serve">إجمالي الحصص</string>
+    <string name="protein">البروتين</string>
+    <string name="fat">الدهون</string>
+    <string name="carbohydrates">الكربوهيدرات</string>
+    <string name="amount">الكمية</string>
+    <string name="nutrient">العنصر الغذائي</string>
+    <string name="liquid">سائل</string>
+    <string name="solid">صلب</string>
+    <string name="today">اليوم</string>
+    <string name="permission_denied">تم رفض الإذن</string>
+    <string name="select_date_warning">يجب أن يكون تاريخ الانتهاء بعد تاريخ البدء</string>
+    <string name="recognizing">جاري التعرف…</string>
+    <string name="take_a_few">قد تستغرق هذه العملية بضع ثوانٍ</string>
+    <string name="start_date">اختر تاريخ البدء</string>
+    <string name="end_date">اختر تاريخ الانتهاء</string>
+    <string name="detect_failed_desc">تعذر التعرف على الوجبة. يرجى التحقق من اتصال الإنترنت وإعادة التقاط الصورة!</string>
+    <string name="detect_failed">فشل التعرف</string>
+    <string name="save_button">تسجيل الوجبة في اليوميات</string>
+    <string name="saved_successfully">تم الحفظ بنجاح</string>
+    <string name="analyzing_volume">جاري تحليل الحجم</string>
+    <string name="analyzing_food">جاري تحليل الطعام</string>
+    <string name="analyzing_calories">جاري تحليل السعرات الحرارية والعناصر الغذائية.</string>
+
+</resources>

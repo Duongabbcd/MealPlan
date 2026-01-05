@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_grant_Permission">Berechtigung erteilen</string>
+    <string name="message_grant_Permission">Bitte erteilen Sie alle Berechtigungen, um zusätzliche Funktionen nutzen zu können.</string>
+    <string name="goto_setting">Zu den Einstellungen</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="imageView">Bildansicht</string>
+
+    <string name="language">Sprache</string>
+    <string name="english">Englisch</string>
+    <string name="hindi">Hindi</string>
+    <string name="spanish">Spanisch</string>
+    <string name="french">Französisch</string>
+    <string name="arabic">Arabisch</string>
+    <string name="bengali">Bengalisch</string>
+    <string name="russian">Russisch</string>
+    <string name="portuguese">Portugiesisch</string>
+    <string name="indonesian">Indonesisch</string>
+    <string name="german">Deutsch</string>
+    <string name="italian">Italienisch</string>
+    <string name="korean">Koreanisch</string>
+
+    <string name="loading">LÄDT</string>
+
+    <string name="intro_1">Kalorien einfach verfolgen</string>
+    <string name="intro_sub_1">Machen Sie ein Foto und lassen Sie die KI Ihre tägliche Kalorienaufnahme berechnen.</string>
+    <string name="intro_2">Lebensmittelinformationen</string>
+    <string name="intro_sub_2">Kalorienaufnahme, Nährstoffaufnahme und Gesundheitsbewertung werden klar dokumentiert.</string>
+    <string name="intro_3">Fortschritt verfolgen</string>
+    <string name="intro_sub_3">Erreichen Sie Ihre Ziele einfach, indem Sie Ihren Fortschritt täglich verfolgen.</string>
+    <string name="next">Weiter</string>
+    <string name="permission">Berechtigung</string>
+    <string name="skip">Überspringen</string>
+    <string name="grant_permission">Erteilen Sie den Kamerazugriff, um Ihre täglichen Mahlzeiten einfach fotografieren zu können.</string>
+    <string name="camera">Kamera</string>
+
+    <!-- home -->
+    <string name="home">Startseite</string>
+    <string name="meal">Mahlzeit</string>
+    <string name="recent">Zuletzt</string>
+    <string name="setting">Einstellungen</string>
+    <string name="invite_searching">Worauf hast du heute Appetit?</string>
+    <string name="search">Suche</string>
+    <string name="nutrition_desc">Kalorien schnell berechnen</string>
+    <string name="nutrition_title">Suche nach Lebensmitteln</string>
+    <string name="scanning_desc">Kalorienzähler</string>
+
+    <string name="scanning_title">Mahlzeit-Scan</string>
+    <string name="no_meal_title">Es wurden noch keine Mahlzeiten gespeichert</string>
+    <string name="no_scan_desc">Fügen Sie Mahlzeiten hinzu, um eine detaillierte Analyse Ihrer Kalorienaufnahme und Nährstoffgruppen zu erhalten</string>
+    <string name="meal_scanning">Mahlzeit-Scan</string>
+    <string name="recent_scans">Letzte Scans</string>
+    <string name="see_more">Mehr sehen</string>
+    <string name="general">ALLGEMEIN</string>
+    <string name="set_lang">Spracheinstellungen</string>
+    <string name="set_rating">Bewertung &amp; Rezension</string>
+    <string name="set_contact">Kontaktieren Sie uns</string>
+    <string name="set_share">Freunden erzählen</string>
+    <string name="set_term">Nutzungsbedingungen</string>
+    <string name="set_policy">Datenschutzrichtlinie</string>
+
+    <string name="rate_us">Bewerten Sie uns</string>
+    <string name="email_feedback_title">Feedback %s Version: %s</string>
+    <string name="do_you_want_to_exit_app">Möchten Sie die App beenden?</string>
+    <string name="exit_app">App beenden</string>
+    <string name="exit_title">Jetzt beenden!</string>
+    <string name="exit_question">Sind Sie sicher, dass Sie den Food Scan verlassen möchten?</string>
+    <string name="no">Nein</string>
+    <string name="yes_exit">Ja, beenden</string>
+    <string name="guide_title">Für die genaueste KI-Erkennung.</string>
+    <string name="ok">OK</string>
+    <string name="guide_step_1">Machen Sie ein frontales Foto eines einzelnen Artikels</string>
+    <string name="guide_step_2">Für ausreichend Beleuchtung sorgen und Schatten vermeiden</string>
+    <string name="guide_step_3">Das Foto sollte scharf und klar sein, ohne Unschärfe</string>
+    <string name="fail">Fehlgeschlagen</string>
+    <string name="pass">Bestanden</string>
+    <string name="meal_pic_title">Machen Sie ein Foto der heutigen Mahlzeit, um die Kalorien zu zählen.</string>
+    <string name="scan">Scannen</string>
+
+    <string name="meal_name">●  Name: </string>
+    <string name="meal_type">●  Typ: </string>
+    <string name="meal_ingredient">●  Zutaten: </string>
+    <string name="dish_overview">Gerichtübersicht</string>
+    <string name="meal_size">Angepasste Portionsgröße</string>
+    <string name="meal_nutrition">Nährwertangaben</string>
+    <string name="meal_energy">●  Gesamtennergie: </string>
+    <string name="meal_nutrient">Makronährstoffe</string>
+    <string name="total_serve">Gesamtportion</string>
+    <string name="protein">Protein</string>
+    <string name="fat">Fett</string>
+    <string name="carbohydrates">Kohlenhydrate</string>
+    <string name="amount">Menge</string>
+    <string name="nutrient">Nährstoff</string>
+    <string name="liquid">Flüssig</string>
+    <string name="solid">Fest</string>
+    <string name="today">Heute</string>
+    <string name="permission_denied">Berechtigung verweigert</string>
+    <string name="select_date_warning">Enddatum muss nach dem Startdatum liegen</string>
+    <string name="recognizing">Erkennung…</string>
+    <string name="take_a_few">Dieser Vorgang kann einige Sekunden dauern</string>
+    <string name="start_date">Startdatum auswählen</string>
+    <string name="end_date">Enddatum auswählen</string>
+    <string name="detect_failed_desc">Die Mahlzeit konnte nicht erkannt werden. Bitte überprüfen Sie die Internetverbindung und machen Sie das Foto erneut!</string>
+    <string name="detect_failed">Erkennung fehlgeschlagen</string>
+    <string name="save_button">Mahlzeit ins Tagebuch eintragen</string>
+    <string name="saved_successfully">Erfolgreich gespeichert</string>
+    <string name="analyzing_volume">Volumenanalyse</string>
+    <string name="analyzing_food">Lebensmittelanalyse</string>
+    <string name="analyzing_calories">Analyse der Kalorien und Nährstoffe.</string>
+
+</resources>
