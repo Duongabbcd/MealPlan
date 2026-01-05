@@ -3,7 +3,7 @@
 
     <string name="contact_email" translatable="false">anhtvn96.po@cdtgames.com</string>
     <string name="admob_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="adjust_token_key" translatable="false"></string>
+    <string name="adjust_token_key" translatable="false">ey65w1ju0etc</string>
     <string name="facebook_id" translatable="false"></string>
     <string name="facebook_client_token" translatable="false"></string>
 
