@@ -367,10 +367,15 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>(ActivityDetailBinding
     }
 
     private fun formatTimestamp(timestamp: Long): String {
-        val formatter = DateTimeFormatter.ofPattern("HH:mm - yy/MM/yyyy")
-            .withZone(ZoneId.systemDefault())
+        // Use proper pattern: HH:mm - dd/MM/yyyy (day/month/year)
+        val formatter = DateTimeFormatter.ofPattern("HH:mm - dd/MM/yyyy")
+            .withZone(ZoneId.systemDefault()) // converts to your device's local timezone
 
-        return formatter.format(Instant.ofEpochMilli(timestamp))
+        // Convert timestamp (milliseconds) to Instant, then format
+        val formattedDate = formatter.format(Instant.ofEpochMilli(timestamp))
+
+        println("formatTimestamp: $timestamp -> $formattedDate")
+        return formattedDate
     }
 
 }

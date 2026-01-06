@@ -1,9 +1,9 @@
 package com.ezt.meal.ai.scan.screen.home.fragment
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,19 +11,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ezt.meal.ai.scan.R
 import com.ezt.meal.ai.scan.databinding.FragmentRecentBinding
 import com.ezt.meal.ai.scan.screen.BaseFragment
+import com.ezt.meal.ai.scan.screen.camera.CameraActivity
 import com.ezt.meal.ai.scan.screen.home.adapter.RecentDate
 import com.ezt.meal.ai.scan.screen.home.adapter.RecentDateAdapter
 import com.ezt.meal.ai.scan.screen.home.adapter.RecentMealAdapter
 import com.ezt.meal.ai.scan.utils.Common.gone
+import com.ezt.meal.ai.scan.utils.Common.visible
 import com.ezt.meal.ai.scan.viewmodel.MealViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.LocalTime
 import java.time.YearMonth
 import java.time.ZoneId
-import java.time.format.DateTimeFormatter
 import java.time.format.TextStyle
 import java.util.Calendar
 import java.util.Locale
@@ -35,30 +34,26 @@ class RecentFragment : BaseFragment<FragmentRecentBinding>(FragmentRecentBinding
 
     private val mealViewModel: MealViewModel by viewModels()
     private lateinit var recentMealAdapter: RecentMealAdapter
+
+    private var didAutoScroll = false
+
     private val  recentDateAdapter: RecentDateAdapter by lazy {
         RecentDateAdapter { recentDate ->
             if(recentDate != RecentDate.RECENT_DATE_DEFAULT) {
                 val result = getDayRangeMillis(recentDate)
+                println("recentDateAdapter: ${result.first} and ${result.second}")
                 mealViewModel.getMealBetweenDates(result.first, result.second)
-            } else {
-                mealViewModel.getMeals()
             }
         }
     }
 
     fun getDayRangeMillis(date: RecentDate): Pair<Long, Long> {
-        // Convert RecentDate to LocalDate (using current year)
-        val monthNumber = java.time.Month.valueOf(date.month.uppercase()).value
-        val localDate = LocalDate.of(LocalDate.now().year, monthNumber, date.day)
+        val localDate = LocalDate.of(date.year, date.month, date.day)
 
-        // Start of day: 00:00
-        val fromValue = localDate.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()
-
-        // End of day: 23:59
-        val toValue = localDate.atTime(23, 59)
-            .atZone(ZoneId.systemDefault())
-            .toInstant()
-            .toEpochMilli()
+        val fromValue = localDate.atStartOfDay(ZoneId.systemDefault())
+            .toInstant().toEpochMilli()
+        val toValue = localDate.atTime(23, 59).atZone(ZoneId.systemDefault())
+            .toInstant().toEpochMilli()
 
         return Pair(fromValue, toValue)
     }
@@ -69,76 +64,11 @@ class RecentFragment : BaseFragment<FragmentRecentBinding>(FragmentRecentBinding
 
         recentMealAdapter = RecentMealAdapter(false)
 
-        mealViewModel.getMeals()
-
         binding.apply {
             updateSearchList()
             allItems.adapter = recentMealAdapter
             resetButton.gone()
-            fromValue.setOnClickListener {
-                val calendar = Calendar.getInstance()
-
-                DatePickerDialog(
-                    requireContext(),
-                    { _, year, month, dayOfMonth ->
-
-                        calendar.set(year, month, dayOfMonth, 0, 0, 0)
-                        calendar.set(Calendar.MILLISECOND, 0)
-
-                        startDate = calendar.timeInMillis
-                        selectedStartDate.text = startDate.toString()
-
-                        Toast.makeText(
-                            requireContext(), resources.getString(R.string.end_date),
-                            Toast.LENGTH_SHORT
-                        ).show()
-
-                        fromValue.text =
-                            SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-                                .format(calendar.time)
-
-                    },
-                    calendar.get(Calendar.YEAR),
-                    calendar.get(Calendar.MONTH),
-                    calendar.get(Calendar.DAY_OF_MONTH)
-                ).show()
-            }
-
-            toValue.setOnClickListener {
-                val calendar = Calendar.getInstance()
-
-                DatePickerDialog(
-                    requireContext(),
-                    { _, year, month, dayOfMonth ->
-
-                        calendar.set(year, month, dayOfMonth, 0, 0, 0)
-                        calendar.set(Calendar.MILLISECOND, 0)
-
-                        endDate = calendar.timeInMillis
-
-                        if (endDate <= startDate || startDate == 0L) {
-                            Toast.makeText(
-                                requireContext(),
-                                resources.getString((R.string.select_date_warning)),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                            return@DatePickerDialog
-                        }
-
-
-                        selectedEndDate.text = endDate.toString()
-                        mealViewModel.getMealBetweenDates(startDate, endDate)
-
-                        toValue.text =
-                            SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-                                .format(calendar.time)
-
-                    },
-                    calendar.get(Calendar.YEAR),
-                    calendar.get(Calendar.MONTH),
-                    calendar.get(Calendar.DAY_OF_MONTH)
-                ).show()
-            }
+            setupDate()
 
             resetButton.setOnClickListener {
                 startDate = 0
@@ -148,39 +78,154 @@ class RecentFragment : BaseFragment<FragmentRecentBinding>(FragmentRecentBinding
                 mealViewModel.getMeals()
             }
 
+            scanBtn.setOnClickListener {
+                withSafeContext { ctx ->
+                    startActivity(Intent(ctx, CameraActivity::class.java))
+                }
+            }
+
             mealViewModel.selectedMeals.observe(viewLifecycleOwner) { data ->
-                recentMealAdapter.submitList(data)
+
+                if(data.isEmpty()) {
+                    noRecentScan.visible()
+                    allItems.gone()
+                } else {
+                    noRecentScan.gone()
+                    allItems.visible()
+                    recentMealAdapter.submitList(data)
+                }
+
             }
         }
+    }
+
+    private fun setupDate() {
+      binding.apply {
+          fromValue.setOnClickListener {
+              val calendar = Calendar.getInstance()
+
+              DatePickerDialog(
+                  requireContext(),
+                  { _, year, month, dayOfMonth ->
+
+                      calendar.set(year, month, dayOfMonth, 0, 0, 0)
+                      calendar.set(Calendar.MILLISECOND, 0)
+
+                      startDate = calendar.timeInMillis
+                      selectedStartDate.text = startDate.toString()
+
+                      Toast.makeText(
+                          requireContext(), resources.getString(R.string.end_date),
+                          Toast.LENGTH_SHORT
+                      ).show()
+
+                      fromValue.text =
+                          SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+                              .format(calendar.time)
+
+                  },
+                  calendar.get(Calendar.YEAR),
+                  calendar.get(Calendar.MONTH),
+                  calendar.get(Calendar.DAY_OF_MONTH)
+              ).show()
+          }
+
+          toValue.setOnClickListener {
+              val calendar = Calendar.getInstance()
+
+              DatePickerDialog(
+                  requireContext(),
+                  { _, year, month, dayOfMonth ->
+
+                      calendar.set(year, month, dayOfMonth, 0, 0, 0)
+                      calendar.set(Calendar.MILLISECOND, 0)
+
+                      endDate = calendar.timeInMillis
+
+                      if (endDate <= startDate || startDate == 0L) {
+                          Toast.makeText(
+                              requireContext(),
+                              resources.getString((R.string.select_date_warning)),
+                              Toast.LENGTH_SHORT
+                          ).show()
+                          return@DatePickerDialog
+                      }
+
+
+                      selectedEndDate.text = endDate.toString()
+                      mealViewModel.getMealBetweenDates(startDate, endDate)
+
+                      toValue.text =
+                          SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+                              .format(calendar.time)
+
+                  },
+                  calendar.get(Calendar.YEAR),
+                  calendar.get(Calendar.MONTH),
+                  calendar.get(Calendar.DAY_OF_MONTH)
+              ).show()
+          }
+      }
     }
 
     private fun updateSearchList() {
         val today = LocalDate.now()
 
-        // Current month info
         val currentYearMonth = YearMonth.from(today)
-        val currentMonthName = today.month.getDisplayName(TextStyle.FULL, Locale.getDefault())
-        val daysInCurrentMonth = currentYearMonth.lengthOfMonth()
-
-        // Previous month info
         val previousYearMonth = currentYearMonth.minusMonths(1)
-        val previousMonthName = previousYearMonth.month.getDisplayName(TextStyle.FULL, Locale.getDefault())
+
+        val daysInCurrentMonth = currentYearMonth.lengthOfMonth()
         val daysInPreviousMonth = previousYearMonth.lengthOfMonth()
 
-        // Create list: last 3 days of previous month + current month
-        val previousMonthDays = (daysInPreviousMonth - 2..daysInPreviousMonth).map { day ->
-            RecentDate(month = previousMonthName, day = day)
+        // Include year in RecentDate
+        val previousMonthDays = (1..daysInPreviousMonth).map { day ->
+            RecentDate(previousYearMonth.year, previousYearMonth.monthValue, day)
         }
 
         val currentMonthDays = (1..daysInCurrentMonth).map { day ->
-            RecentDate(month = currentMonthName, day = day)
+            RecentDate(currentYearMonth.year, currentYearMonth.monthValue, day)
         }
 
-        val allDates = previousMonthDays + currentMonthDays
+        val allRecentDates = previousMonthDays + currentMonthDays
+
+        binding.allDates.layoutManager =
+            LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
 
         binding.allDates.adapter = recentDateAdapter
-        binding.allDates.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
-        recentDateAdapter.submitList(allDates)
+
+        val todayIndex = allRecentDates.indexOfFirst {
+            it.day == today.dayOfMonth && it.month == today.monthValue
+        }
+
+        recentDateAdapter.submitList(allRecentDates) {
+            if (todayIndex != -1) {
+                recentDateAdapter.setSelectedPosition(todayIndex)
+                autoScrollToToday(todayIndex)
+
+                // ✅ Fetch meals for today automatically
+                val todayDate = allRecentDates[todayIndex]
+                val result = getDayRangeMillis(todayDate)
+                mealViewModel.getMealBetweenDates(result.first, result.second)
+            }
+        }
     }
 
+
+    private fun autoScrollToToday(
+        index: Int
+    ) {
+        if (didAutoScroll) return
+
+        binding.allDates.post {
+            val layoutManager =
+                binding.allDates.layoutManager as LinearLayoutManager
+
+            layoutManager.scrollToPositionWithOffset(
+                index,
+                binding.allDates.width / 2
+            )
+
+            didAutoScroll = true
+        }
+    }
 }

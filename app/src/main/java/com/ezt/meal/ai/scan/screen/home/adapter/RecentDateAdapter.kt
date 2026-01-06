@@ -3,103 +3,109 @@ package com.ezt.meal.ai.scan.screen.home.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.ezt.meal.ai.scan.R
 import com.ezt.meal.ai.scan.databinding.ItemDateBinding
+import java.time.Month
+import java.time.format.TextStyle
+import java.util.Locale
 
-class RecentDateAdapter(private val onSelectDate: (RecentDate) -> Unit) :
-    RecyclerView.Adapter<RecentDateAdapter.RecentDateViewHolder>() {
-    private val input: MutableList<RecentDate> = mutableListOf()
-    private lateinit var context: Context
+class RecentDateAdapter(
+    private val onSelectDate: (RecentDate) -> Unit
+) : ListAdapter<RecentDate, RecentDateAdapter.RecentDateViewHolder>(DIFF_UTIL) {
+
     private var selectedPosition: Int = RecyclerView.NO_POSITION
+    private lateinit var context: Context
 
-
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): RecentDateViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecentDateViewHolder {
         context = parent.context
-
-            val binding =
-                ItemDateBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-            return RecentDateViewHolder(binding)
-
-
+        val binding = ItemDateBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return RecentDateViewHolder(binding)
     }
 
-    override fun onBindViewHolder(
-        holder:  RecentDateViewHolder,
-        position: Int
-    ) {
-        holder.bind(position)
-
+    override fun onBindViewHolder(holder: RecentDateViewHolder, position: Int) {
+        holder.bind(getItem(position), position)
     }
 
-    override fun getItemCount(): Int = input.size
-
-    fun submitList(data: List<RecentDate>) {
-        input.clear()
-        input.addAll(data)
-        notifyDataSetChanged()
+    fun setSelectedPosition(position: Int) {
+        val previous = selectedPosition
+        selectedPosition = position
+        if (previous != RecyclerView.NO_POSITION) notifyItemChanged(previous)
+        notifyItemChanged(position)
     }
 
-    inner class  RecentDateViewHolder(private val binding: ItemDateBinding) :
+    inner class RecentDateViewHolder(private val binding: ItemDateBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(position: Int) {
-            val date = input[position]
+        fun bind(date: RecentDate, position: Int) {
             binding.apply {
-                recentMonth.text = date.month.substring(0,2)
+                val monthName = Month.of(date.month)
+                    .getDisplayName(TextStyle.SHORT, Locale.getDefault())
+                recentMonth.text = monthName
                 recentDay.text = date.day.toString()
 
-                if(date.isSelected) {
-                    root.setBackgroundResource(R.drawable.background_selected_radius_18)
-                    recentDay.setTextColor(context.resources.getColor(R.color.black))
-                } else {
-                    root.setBackgroundResource(R.drawable.background_unselected_radius_18)
-                    recentDay.setTextColor(context.resources.getColor(R.color.unselected))
+                val isSelected = position == selectedPosition
 
-
-                }
+                root.setBackgroundResource(
+                    if (isSelected)
+                        R.drawable.background_selected_radius_18
+                    else
+                        R.drawable.background_unselected_radius_18
+                )
+                recentDay.setTextColor(
+                    if (isSelected)
+                        context.getColor(R.color.black)
+                    else
+                        context.getColor(R.color.unselected)
+                )
 
                 root.setOnClickListener {
-                    val previousPosition = selectedPosition
-                    println("position: $position and $selectedPosition")
-                    // 🔁 Click same item again → unselect
-                    if (position == selectedPosition) {
-                        date.isSelected = false
-                        selectedPosition = RecyclerView.NO_POSITION
-
-                        notifyItemChanged(position)
-                        onSelectDate(RecentDate.RECENT_DATE_DEFAULT)
-                        return@setOnClickListener
-                    }
-
-                    // 🔄 Click different item
-                    if (previousPosition != RecyclerView.NO_POSITION) {
-                        input[previousPosition].isSelected = false
-                        notifyItemChanged(previousPosition)
-                    }
-
-                    date.isSelected = true
-                    selectedPosition = position
-                    notifyItemChanged(position)
-
-                    // ✅ ALWAYS return newest selected date
-                    onSelectDate(date)
+                    select(position)
                 }
             }
         }
 
+        private fun select(position: Int) {
+            val previous = selectedPosition
+
+            if (position == selectedPosition) {
+                selectedPosition = RecyclerView.NO_POSITION
+                notifyItemChanged(position)
+                onSelectDate(RecentDate.RECENT_DATE_DEFAULT)
+                return
+            }
+
+            selectedPosition = position
+
+            if (previous != RecyclerView.NO_POSITION) notifyItemChanged(previous)
+            notifyItemChanged(position)
+            onSelectDate(getItem(position))
+        }
+    }
+
+    companion object {
+        val DIFF_UTIL = object : DiffUtil.ItemCallback<RecentDate>() {
+            override fun areItemsTheSame(oldItem: RecentDate, newItem: RecentDate): Boolean {
+                return oldItem.day == newItem.day && oldItem.month == newItem.month
+            }
+
+            override fun areContentsTheSame(oldItem: RecentDate, newItem: RecentDate): Boolean {
+                return oldItem == newItem
+            }
+        }
     }
 }
 
+
 data class RecentDate(
-    val month:String ,
+    val year: Int,
+    val month:Int ,
     val day: Int,
     var isSelected: Boolean = false
 ) {
     companion object {
-        val RECENT_DATE_DEFAULT = RecentDate("0", 0, false)
+        val RECENT_DATE_DEFAULT = RecentDate(-1, -1, -1, false)
     }
 }

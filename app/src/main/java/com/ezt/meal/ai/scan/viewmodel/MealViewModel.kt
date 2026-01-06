@@ -24,8 +24,11 @@ import javax.inject.Inject
 class MealViewModel @Inject constructor(private val mealRepository: MealRepository) :
     ViewModel() {
     val allMeals = mealRepository.getAllMeals
-    val recentMeals = mealRepository.getRecentMeal
+    private var _recentMeals= MutableLiveData<List<Meal>>()
+    val recentMeals: LiveData<List<Meal>> = _recentMeals
 
+    private var _loading= MutableLiveData<Boolean>()
+    val loading: LiveData<Boolean> = _loading
 
     private var _selectedMeals = MutableLiveData<List<Meal>>()
     val selectedMeals: LiveData<List<Meal>> = _selectedMeals
@@ -60,6 +63,17 @@ class MealViewModel @Inject constructor(private val mealRepository: MealReposito
                 _searchMeals.postValue(GlobalConstant.getSearchMeals().filter { it.dishName.contains(mealName, true) })
             }
 
+        }
+    }
+
+    fun getRecentMeals() {
+        _loading.value = true
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                _recentMeals.postValue(mealRepository.getRecentMeal)
+
+            }
+            _loading.value = false
         }
     }
 

@@ -128,9 +128,16 @@ class CameraActivity :
 
         // Full screen
         WindowCompat.setDecorFitsSystemWindows(window, false)
-        window.insetsController?.hide(
-            WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars()
-        )
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) { // API 30+
+            window.insetsController?.hide(
+                WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars()
+            )
+        } else {
+            // For older versions, use deprecated method
+            @Suppress("DEPRECATION")
+            window.decorView.systemUiVisibility =
+                View.SYSTEM_UI_FLAG_FULLSCREEN or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+        }
 
         if (hasCameraPermission(this@CameraActivity)) {
             startCamera()

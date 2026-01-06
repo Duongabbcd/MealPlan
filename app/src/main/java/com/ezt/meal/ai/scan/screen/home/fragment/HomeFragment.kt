@@ -3,6 +3,7 @@ package com.ezt.meal.ai.scan.screen.home.fragment
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -26,6 +27,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
+            mealViewModel.getRecentMeals()
             scanning.setOnClickListener {
                 startActivity(Intent(requireContext(), CameraActivity::class.java))
 
@@ -80,7 +82,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                 }
             }
 
-
+            mealViewModel.loading.observe(viewLifecycleOwner) { result ->
+                progressBar.isVisible = result
+            }
         }
     }
 }
