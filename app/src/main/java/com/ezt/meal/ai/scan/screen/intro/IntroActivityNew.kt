@@ -7,6 +7,7 @@ import com.ezt.meal.ai.scan.ads.AdmobUtils
 import com.ezt.meal.ai.scan.ads.RemoteConfig
 import com.ezt.meal.ai.scan.databinding.ActivityIntroNewBinding
 import com.ezt.meal.ai.scan.screen.base.BaseActivity
+import com.ezt.meal.ai.scan.screen.home.MainActivity
 import com.ezt.meal.ai.scan.screen.permission.PermissionActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -68,7 +69,7 @@ class IntroActivityNew : BaseActivity<ActivityIntroNewBinding>(ActivityIntroNewB
 //            "writingGranted: $writingGranted and externalStorageGranted: $externalStorageGranted"
 //        )
 
-        startActivity(Intent(this, PermissionActivity::class.java))
+        startActivity(Intent(this, MainActivity::class.java))
 
 //        val duration = System.currentTimeMillis() - now
 //        if (!writingGranted || !externalStorageGranted) {

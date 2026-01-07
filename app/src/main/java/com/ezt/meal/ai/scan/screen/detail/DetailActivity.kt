@@ -2,6 +2,7 @@ package com.ezt.meal.ai.scan.screen.detail
 
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.graphics.pdf.PdfDocument
 import android.os.Bundle
@@ -24,6 +25,7 @@ import com.ezt.meal.ai.scan.databinding.ActivityDetailBinding
 import com.ezt.meal.ai.scan.model.Ingredient
 import com.ezt.meal.ai.scan.model.NutritionResponse
 import com.ezt.meal.ai.scan.screen.base.BaseActivity
+import com.ezt.meal.ai.scan.screen.camera.CameraActivity
 import com.ezt.meal.ai.scan.screen.detail.adapter.IngredientAdapter
 import com.ezt.meal.ai.scan.screen.language.GlobalConstant
 import com.ezt.meal.ai.scan.utils.Common.gone
@@ -31,6 +33,7 @@ import com.ezt.meal.ai.scan.utils.Common.visible
 import com.ezt.meal.ai.scan.viewmodel.MealViewModel
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
+import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
 import java.security.MessageDigest
@@ -55,6 +58,9 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>(ActivityDetailBinding
     }
     private val mealDate by lazy {
         intent.getLongExtra("mealDate", -1L)
+    }
+    private val rotation by lazy {
+        intent.getIntExtra("rotation", 0)
     }
 
 
@@ -83,13 +89,20 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>(ActivityDetailBinding
         super.onCreate(savedInstanceState)
         binding.apply {
             println("defaultMeal: $defaultMeal")
+            println("rotation: $rotation")
 
             backBtn.setOnClickListener {
                 finish()
             }
 
             if (imagePath.isNotEmpty()) {
-                Glide.with(this@DetailActivity).load(imagePath).transform(RotateTransformation(90F))
+                Glide.with(this@DetailActivity).load(imagePath).transform(RotateTransformation(
+                    when(rotation) {
+                        1 -> 90F
+                        2 -> 270F
+                        else -> 0F
+                    }
+                ))
                     .into(binding.mealBg1)
 
             } else {
@@ -191,7 +204,7 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>(ActivityDetailBinding
                 saveButton.gone()
             }
 
-            if(imagePath.isEmpty()) {
+            if(defaultMeal.ingredients.isEmpty()) {
                 saveButton.gone()
 
                 mealOverview.gone()
@@ -226,7 +239,8 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>(ActivityDetailBinding
                         processingTime = defaultMeal.processingTime,
                         status = defaultMeal.status,
                         message = defaultMeal.message,
-                        date = System.currentTimeMillis()
+                        date = System.currentTimeMillis(),
+                        isFront = rotation
                     )
                 )
                 Toast.makeText(
@@ -238,6 +252,7 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>(ActivityDetailBinding
 
         }
     }
+
 
     private fun getCurrentTime(): String {
         val millis = System.currentTimeMillis()

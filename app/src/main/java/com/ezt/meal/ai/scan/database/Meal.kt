@@ -20,5 +20,6 @@ data class Meal (
     val processingTime: Double,
     val status: String,
     val message: String,
-    val date: Long
+    val date: Long,
+    var isFront: Int = 0
 )

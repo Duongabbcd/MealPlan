@@ -106,6 +106,6 @@
     <string name="analyzing_volume">Analisi del volume</string>
     <string name="analyzing_food">Analisi del cibo</string>
     <string name="analyzing_calories">Analisi di calorie e nutrienti.</string>
-
+    <string name="flash_not_available">Flash non disponibile sulla fotocamera frontale</string>
 
 </resources>

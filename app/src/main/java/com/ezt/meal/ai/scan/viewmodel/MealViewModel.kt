@@ -25,7 +25,7 @@ class MealViewModel @Inject constructor(private val mealRepository: MealReposito
     ViewModel() {
     val allMeals = mealRepository.getAllMeals
     private var _recentMeals= MutableLiveData<List<Meal>>()
-    val recentMeals: LiveData<List<Meal>> = _recentMeals
+    val recentMeals  = mealRepository.getRecentMeal
 
     private var _loading= MutableLiveData<Boolean>()
     val loading: LiveData<Boolean> = _loading
@@ -66,16 +66,16 @@ class MealViewModel @Inject constructor(private val mealRepository: MealReposito
         }
     }
 
-    fun getRecentMeals() {
-        _loading.value = true
-        viewModelScope.launch {
-            withContext(Dispatchers.IO) {
-                _recentMeals.postValue(mealRepository.getRecentMeal)
-
-            }
-            _loading.value = false
-        }
-    }
+//    fun getRecentMeals() {
+//        _loading.value = true
+//        viewModelScope.launch {
+//            withContext(Dispatchers.IO) {
+//                _recentMeals.postValue(mealRepository.getRecentMeal)
+//
+//            }
+//            _loading.value = false
+//        }
+//    }
 
     fun detectMealFromImage(savedUri: File) {
         viewModelScope.launch {

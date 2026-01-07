@@ -105,6 +105,6 @@
     <string name="analyzing_volume">Анализ объема</string>
     <string name="analyzing_food">Анализ еды</string>
     <string name="analyzing_calories">Анализ калорий и питательных веществ.</string>
-
+    <string name="flash_not_available">Вспышка недоступна на фронтальной камере</string>
 
 </resources>

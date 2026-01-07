@@ -107,5 +107,6 @@
     <string name="analyzing_volume">Volumenanalyse</string>
     <string name="analyzing_food">Lebensmittelanalyse</string>
     <string name="analyzing_calories">Analyse der Kalorien und Nährstoffe.</string>
+    <string name="flash_not_available">Blitz auf der Frontkamera nicht verfügbar</string>
 
 </resources>

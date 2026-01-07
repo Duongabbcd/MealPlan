@@ -7,7 +7,6 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Outline
-import android.graphics.RectF
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -21,8 +20,7 @@ import android.view.WindowInsets
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
-import androidx.annotation.DisplayContext
-import androidx.annotation.RequiresApi
+import androidx.camera.core.Camera
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageCapture
 import androidx.camera.core.ImageCaptureException
@@ -64,11 +62,13 @@ class CameraActivity :
 
     private val mealViewModel: MealViewModel by viewModels()
     private var imagePath = ""
+    private var isFlash = false
 
     private var lensFacing = CameraSelector.LENS_FACING_BACK
 
     private lateinit var imageCapture: ImageCapture
-
+    private var camera: Camera? = null
+    private var rotation = 1
     private val pickImageLauncher = registerForActivityResult(
         ActivityResultContracts.GetContent()
     ) { uri: Uri? ->
@@ -93,6 +93,7 @@ class CameraActivity :
             }
             binding.bottomController.gone()
             binding.backBtn.gone()
+            binding.flashIcon.gone()
             binding.guideBtn.gone()
         }
     }
@@ -173,12 +174,24 @@ class CameraActivity :
 //                })
             }
 
-            reverseCam.setOnClickListener {
-                return@setOnClickListener
-                lensFacing = if (lensFacing == CameraSelector.LENS_FACING_BACK) {
-                    CameraSelector.LENS_FACING_FRONT
+            flashIcon.setOnClickListener {
+                if (isFlash) {
+                    flashIcon.setImageResource(
+                        R.drawable.icon_unflash)
                 } else {
-                    CameraSelector.LENS_FACING_BACK
+                    flashIcon.setImageResource(
+                        R.drawable.icon_flash)
+                }
+                isFlash = !isFlash
+            }
+
+            reverseCam.setOnClickListener {
+                 if (lensFacing == CameraSelector.LENS_FACING_BACK) {
+                     lensFacing = CameraSelector.LENS_FACING_FRONT
+                     rotation = 2
+                } else {
+                     lensFacing = CameraSelector.LENS_FACING_BACK
+                     rotation = 1
                 }
 
                 // Restart camera with the new lens
@@ -186,7 +199,6 @@ class CameraActivity :
             }
 
             gallery.setOnClickListener {
-                return@setOnClickListener
                 pickImageLauncher.launch("image/*") // Only images
             }
 
@@ -201,6 +213,8 @@ class CameraActivity :
 
                 binding.bottomController.visible()
                 binding.backBtn.visible()
+                binding.flashIcon.visible()
+
                 binding.guideBtn.visible()
 
                 if(result.data.data.ingredients.isNullOrEmpty() || result.data.queue.input.isNullOrEmpty() || result == ApiResponse.DEFAULT_RESPONSE) {
@@ -224,6 +238,7 @@ class CameraActivity :
                             putExtra("defaultMeal", defaultMeal)
                             putExtra("imagePath", result.data.queue.input.first().url)
                             putExtra("isDetected", true)
+                            putExtra("rotation", rotation)
                         })
                     }, 500L)
                 }
@@ -278,6 +293,10 @@ class CameraActivity :
 
             imageCapture = ImageCapture.Builder()
                 .setCaptureMode(ImageCapture.CAPTURE_MODE_MINIMIZE_LATENCY)
+                .setFlashMode(
+                    if (isFlash) ImageCapture.FLASH_MODE_ON
+                    else ImageCapture.FLASH_MODE_OFF
+                )
                 .setTargetRotation(binding.previewView.display.rotation)
                 .build()
 
@@ -288,7 +307,7 @@ class CameraActivity :
 
             try {
                 cameraProvider.unbindAll()
-                cameraProvider.bindToLifecycle(
+                camera =  cameraProvider.bindToLifecycle(
                     this,
                     cameraSelector,
                     preview,
@@ -340,12 +359,14 @@ class CameraActivity :
                         quality -= 5
                     } while (compressedFile.length() > 4 * 1024 * 1024 && quality > 0)
 
-                    // 4. Use the compressed file
+                    // 5. Use the compressed file normally
                     val savedUri = Uri.fromFile(compressedFile)
                     Log.d("CameraX", "Photo saved (compressed): $savedUri")
 
                     imagePath = compressedFile.absolutePath
                     mealViewModel.detectMealFromImage(compressedFile)
+
+                    // 6. Update UI
                     binding.analyzingLayout.visible().also {
                         binding.foodAnalyze.visible()
                         binding.foodProgress.visible()
@@ -358,15 +379,13 @@ class CameraActivity :
                         binding.caloryAnalyze.visible()
                         binding.caloryProgress.visible()
                         binding.caloryIcon.gone()
-
-
                     }
                     binding.bottomController.gone()
                     binding.backBtn.gone()
+                    binding.flashIcon.gone()
                     binding.guideBtn.gone()
-
-
                 }
+
 
                 override fun onError(exception: ImageCaptureException) {
                     Log.e("CameraX", "Photo capture failed", exception)
@@ -411,6 +430,7 @@ class CameraActivity :
     }
 
     companion object {
+
         val DEFAULT_INGREDIENTS = listOf(
             Ingredient(foodName = "Burger Bun", estimatedAmount = 100.0, unit = "g", carbs = 20.0, fats = 3.0, proteins = 4.0, calories = 100.0),
             Ingredient(foodName = "Ground Beef Patty", estimatedAmount = 100.0, unit = "g", carbs = 0.0, fats = 20.0, proteins = 25.0, calories = 250.0),

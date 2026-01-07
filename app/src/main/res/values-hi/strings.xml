@@ -106,5 +106,6 @@
     <string name="analyzing_volume">वॉल्यूम का विश्लेषण</string>
     <string name="analyzing_food">भोजन का विश्लेषण</string>
     <string name="analyzing_calories">कैलोरी और पोषक तत्वों का विश्लेषण।</string>
+    <string name="flash_not_available">फ्रंट कैमरा पर फ्लैश उपलब्ध नहीं है</string>
 
 </resources>

@@ -106,5 +106,6 @@
     <string name="analyzing_volume">Analizando volumen</string>
     <string name="analyzing_food">Analizando comida</string>
     <string name="analyzing_calories">Analizando calorías y nutrientes.</string>
+    <string name="flash_not_available">El flash no está disponible en la cámara frontal</string>
 
 </resources>

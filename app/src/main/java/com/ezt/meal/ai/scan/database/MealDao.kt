@@ -25,7 +25,7 @@ interface MealDao {
     suspend fun deleteFailedMeals(status: String = "success")
 
     @Query("SELECT * FROM meal ORDER BY id DESC limit 5")
-    fun getRecentMeals(): List<Meal>
+    fun getRecentMeals(): LiveData<List<Meal>>
 
 
     @Query("SELECT * FROM meal WHERE dishName LIKE '%' || :name || '%' ORDER BY id")

@@ -105,5 +105,6 @@
     <string name="analyzing_volume">부피 분석 중</string>
     <string name="analyzing_food">음식 분석 중</string>
     <string name="analyzing_calories">칼로리와 영양소 분석 중.</string>
+    <string name="flash_not_available">전면 카메라에서는 플래시를 사용할 수 없습니다</string>
 
 </resources>

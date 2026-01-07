@@ -108,5 +108,6 @@
     <string name="analyzing_volume">جاري تحليل الحجم</string>
     <string name="analyzing_food">جاري تحليل الطعام</string>
     <string name="analyzing_calories">جاري تحليل السعرات الحرارية والعناصر الغذائية.</string>
+    <string name="flash_not_available">الفلاش غير متوفر في الكاميرا الأمامية</string>
 
 </resources>

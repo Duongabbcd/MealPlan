@@ -106,5 +106,6 @@
     <string name="analyzing_volume">Analisi volume</string>
     <string name="analyzing_food">Analisi cibo</string>
     <string name="analyzing_calories">Analisi calorie e nutrienti.</string>
+    <string name="flash_not_available">Flash tidak tersedia pada kamera depan</string>
 
 </resources>

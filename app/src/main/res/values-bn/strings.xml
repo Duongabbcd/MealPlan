@@ -108,5 +108,6 @@
     <string name="analyzing_volume">পরিমাণ বিশ্লেষণ করা হচ্ছে</string>
     <string name="analyzing_food">খাবার বিশ্লেষণ করা হচ্ছে</string>
     <string name="analyzing_calories">ক্যালরি ও পুষ্টি বিশ্লেষণ করা হচ্ছে</string>
+    <string name="flash_not_available">সামনের ক্যামেরায় ফ্ল্যাশ উপলব্ধ নয়</string>
 
 </resources>

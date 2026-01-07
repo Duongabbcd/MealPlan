@@ -92,6 +92,7 @@ class RecentMealAdapter(private val isHome: Boolean = true) :
                         putExtra("imagePath", imagePath)
                         putExtra("defaultMeal", Gson().toJson(defaultMeal))
                         putExtra("mealDate", meal.date)
+                        putExtra("rotation", meal.isFront)
                     })
                 }
             }
@@ -133,6 +134,7 @@ class RecentMealAdapter(private val isHome: Boolean = true) :
                         putExtra("imagePath", imagePath)
                         putExtra("defaultMeal", Gson().toJson(defaultMeal))
                         putExtra("mealDate", meal.date)
+                        putExtra("rotation", meal.isFront)
                     })
                 }
             }

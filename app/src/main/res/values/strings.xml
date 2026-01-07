@@ -115,4 +115,6 @@
     <string name="analyzing_volume">Analyzing volume</string>
     <string name="analyzing_food">Analyzing food</string>
     <string name="analyzing_calories">Analyzing calories and nutrients.</string>
+    <string name="flash_not_available">Flash not available on front camera</string>
+
 </resources>
