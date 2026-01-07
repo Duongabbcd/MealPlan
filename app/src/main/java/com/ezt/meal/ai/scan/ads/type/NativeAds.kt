@@ -37,10 +37,10 @@ object NativeAds {
 
     const val NATIVE_LANGUAGE_1 = ADMOB_AD_UNIT_ID_TEST
     const val NATIVE_LANGUAGE_2 = ADMOB_AD_UNIT_ID_TEST
-
     const val NATIVE_INTRO_1 = ADMOB_AD_UNIT_ID_TEST
     const val NATIVE_INTRO_2 = ADMOB_AD_UNIT_ID_TEST
-    const val NATIVE_INTRO_5 = ADMOB_AD_UNIT_ID_TEST
+    const val NATIVE_INTRO_3 = ADMOB_AD_UNIT_ID_TEST
+    const val NATIVE_INTRO_4 = ADMOB_AD_UNIT_ID_TEST
     const val NATIVE_INTRO_FULLSCREEN = "ca-app-pub-3607148519095421/4097325002"
     const val NATIVE_HOME = "ca-app-pub-3607148519095421/7610136559"
     const val NATIVE_PREVIEW = "ca-app-pub-3607148519095421/5854201750"
@@ -50,7 +50,8 @@ object NativeAds {
 
     const val ALIAS_NATIVE_INTRO_1 = "ads_native_intro_1"
     const val ALIAS_NATIVE_INTRO_2 = "ads_native_intro_2"
-    const val ALIAS_NATIVE_INTRO_5 = "ads_native_intro_5"
+    const val ALIAS_NATIVE_INTRO_3 = "ads_native_intro_3"
+    const val ALIAS_NATIVE_INTRO_4 = "ads_native_intro_4"
     const val ALIAS_NATIVE_FULLSCREEN = "ads_native_full_screen"
     const val ALIAS_NATIVE_HOME = "ads_native_home_screen"
     const val ALIAS_NATIVE_PREVIEW= "ads_native_preview_screen"
@@ -133,8 +134,8 @@ object NativeAds {
         callBackNativeAds: CallBackNativeAds,
         adUnitId: String = NATIVE_LANGUAGE_1,
     ) {
-        if (Prefs(MyApplication.instance).premium ||
-            Prefs(MyApplication.instance).isRemoveAd
+        if (Prefs(MyApplication.getInstance()).premium ||
+            Prefs(MyApplication.getInstance()).isRemoveAd
         ) {
             callBackNativeAds.onLoaded()
             return
@@ -192,7 +193,7 @@ object NativeAds {
         preloadMap[alias] = mutableLiveData
 
         val wrapper = preloadMap[alias]?.value
-        if (Prefs(MyApplication.instance).premium || Prefs(MyApplication.instance).isRemoveAd) {
+        if (Prefs(MyApplication.getInstance()).premium || Prefs(MyApplication.getInstance()).isRemoveAd) {
             wrapper?.state = -1
             preloadMap[alias]?.postValue(wrapper)
             return
@@ -287,7 +288,7 @@ object NativeAds {
         isSmaller: Boolean = false
     ): Boolean {
 
-        if (Prefs(MyApplication.instance).premium || Prefs(MyApplication.instance).isRemoveAd) {
+        if (Prefs(MyApplication.getInstance()).premium || Prefs(MyApplication.getInstance()).isRemoveAd) {
             nativeView.visibility = View.GONE
             return false
         }

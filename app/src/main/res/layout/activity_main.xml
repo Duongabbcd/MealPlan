@@ -26,7 +26,7 @@
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_48sdp"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         app:fabCradleVerticalOffset="@dimen/_4sdp"
         app:fabCradleRoundedCornerRadius="@dimen/_10sdp"

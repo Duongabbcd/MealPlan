@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.ezt.meal.ai.scan.database.Meal
-import com.ezt.meal.ai.scan.databinding.ItemRecentBinding
-import com.ezt.meal.ai.scan.databinding.ItemRecentHomeBinding
 import com.ezt.meal.ai.scan.databinding.ItemSearchBinding
 import com.ezt.meal.ai.scan.model.NutritionResponse
 import com.ezt.meal.ai.scan.screen.detail.DetailActivity
@@ -52,7 +50,7 @@ class SearchMealAdapter() :
         fun bind(position: Int) {
             val meal = input[position]
             binding.apply {
-                val image = GlobalConstant.getTheMealImage(position)
+                val image = GlobalConstant.getTheMealImage(meal.dishName)
                 Glide.with(context).load(image).into(searchMealImage)
                 searchMealName.text = meal.dishName
                 searchMealCalory.text = "${meal.totalNutrition.calories} ${meal.measurementUnits.calories}"
@@ -73,7 +71,7 @@ class SearchMealAdapter() :
 
                         val imagePath = meal.image
                         putExtra("imagePath", imagePath)
-                        putExtra("imageDrawable", position)
+                        putExtra("imageDrawable", meal.dishName)
                         putExtra("defaultMeal", Gson().toJson(defaultMeal))
                     })
                 }

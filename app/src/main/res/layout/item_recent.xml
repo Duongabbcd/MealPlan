@@ -56,8 +56,8 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/_68sdp"
             android:layout_weight="1"
-            android:layout_marginEnd="@dimen/_6sdp"
-            android:padding="@dimen/_10sdp">
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:paddingVertical="@dimen/_10sdp">
 
             <FrameLayout
                 android:id="@+id/proteinChart"
@@ -80,12 +80,14 @@
             <TextView
                 android:id="@+id/proteinValue"
                 android:text="25g"
-                style="@style/CustomTextStyleSemiBold18sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                style="@style/CustomTextStyleSemiBold16sp"
                 app:layout_constraintTop_toTopOf="@id/proteinChart"
                 app:layout_constraintStart_toEndOf="@id/proteinChart"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_10sdp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
 
@@ -93,13 +95,15 @@
             <TextView
                 android:id="@+id/proteinCal"
                 android:text="@string/protein"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:textColor="@color/unselected"
                 style="@style/CustomTextStyleMedium12sp"
                 app:layout_constraintTop_toBottomOf="@id/proteinValue"
                 app:layout_constraintStart_toEndOf="@id/proteinChart"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_10sdp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -107,8 +111,8 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/_68sdp"
             android:layout_weight="1"
-            android:layout_marginHorizontal="@dimen/_6sdp"
-            android:padding="@dimen/_10sdp">
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:paddingVertical="@dimen/_10sdp">
 
             <FrameLayout
                 android:id="@+id/carbChart"
@@ -131,26 +135,30 @@
             <TextView
                 android:id="@+id/carbValue"
                 android:text="25g"
-                style="@style/CustomTextStyleSemiBold18sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                style="@style/CustomTextStyleSemiBold16sp"
                 app:layout_constraintTop_toTopOf="@id/carbChart"
                 app:layout_constraintStart_toEndOf="@id/carbChart"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_10sdp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
 
 
             <TextView
                 android:id="@+id/carbVal"
-                android:text="@string/protein"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="@string/carbohydrates"
                 android:textColor="@color/unselected"
                 style="@style/CustomTextStyleMedium12sp"
                 app:layout_constraintTop_toBottomOf="@id/carbValue"
                 app:layout_constraintStart_toEndOf="@id/carbChart"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_10sdp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -158,8 +166,8 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/_68sdp"
             android:layout_weight="1"
-            android:layout_marginStart="@dimen/_6sdp"
-            android:padding="@dimen/_10sdp">
+            android:layout_marginStart="@dimen/_4sdp"
+            android:paddingVertical="@dimen/_10sdp">
 
             <FrameLayout
                 android:id="@+id/fatChart"
@@ -182,26 +190,30 @@
             <TextView
                 android:id="@+id/fatValue"
                 android:text="25g"
-                style="@style/CustomTextStyleSemiBold18sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                style="@style/CustomTextStyleSemiBold16sp"
                 app:layout_constraintTop_toTopOf="@id/fatChart"
                 app:layout_constraintStart_toEndOf="@id/fatChart"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_10sdp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
 
 
             <TextView
                 android:id="@+id/fatVal"
-                android:text="@string/protein"
+                android:text="@string/fat"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:textColor="@color/unselected"
                 style="@style/CustomTextStyleMedium12sp"
                 app:layout_constraintTop_toBottomOf="@id/fatValue"
                 app:layout_constraintStart_toEndOf="@id/fatChart"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_10sdp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
         </androidx.constraintlayout.widget.ConstraintLayout>

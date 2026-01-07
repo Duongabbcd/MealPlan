@@ -73,7 +73,7 @@ object BannerAds {
         try {
             val now = System.currentTimeMillis()
             val adBanner: ViewGroup? = ctx.findViewById(R.id.frBanner)
-            val prefs = Prefs(MyApplication.instance)
+            val prefs = Prefs(MyApplication.getInstance())
             println("initBannerAds: ${prefs.premium} and ${prefs.isRemoveAd}")
             if (prefs.premium || prefs.isRemoveAd) {
                 adBanner?.visibility = View.GONE
@@ -184,7 +184,7 @@ object BannerAds {
 
     fun initBannerAds(ctx: Activity, adBanner: ViewGroup?, adUnitId: String = BANNER_ID_DEFAULT) {
         try {
-            val prefs = Prefs(MyApplication.instance)
+            val prefs = Prefs(MyApplication.getInstance())
             if (prefs.premium || prefs.isRemoveAd) {
                 adBanner?.visibility = View.GONE
                 return

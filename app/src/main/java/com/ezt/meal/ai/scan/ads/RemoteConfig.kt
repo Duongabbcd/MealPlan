@@ -34,5 +34,6 @@ object RemoteConfig {
     //features
     var isForcedToUpdate = "1"
 
+
     var ALLOWED_LIST = listOf<String>()
 }

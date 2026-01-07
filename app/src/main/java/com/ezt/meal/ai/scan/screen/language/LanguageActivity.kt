@@ -59,10 +59,17 @@ class LanguageActivity : BaseActivity<ActivityLanguageBinding>(ActivityLanguageB
             )
         }
 
-        if (RemoteConfig.NATIVE_INTRO.contains("5") && RemoteConfig.ADS_DISABLE != "0") {
+        if (RemoteConfig.NATIVE_INTRO.contains("3") && RemoteConfig.ADS_DISABLE != "0") {
             NativeAds.preloadNativeAds(
-                this@LanguageActivity, NativeAds.ALIAS_NATIVE_INTRO_5,
-                NativeAds.NATIVE_INTRO_5
+                this@LanguageActivity, NativeAds.ALIAS_NATIVE_INTRO_3,
+                NativeAds.NATIVE_INTRO_3
+            )
+        }
+
+        if (RemoteConfig.NATIVE_INTRO.contains("4") && RemoteConfig.ADS_DISABLE != "0") {
+            NativeAds.preloadNativeAds(
+                this@LanguageActivity, NativeAds.ALIAS_NATIVE_INTRO_4,
+                NativeAds.NATIVE_INTRO_4
             )
         }
 

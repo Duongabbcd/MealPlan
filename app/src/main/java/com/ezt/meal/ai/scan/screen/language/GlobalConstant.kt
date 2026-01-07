@@ -5,7 +5,6 @@ import com.ezt.meal.ai.scan.R
 import com.ezt.meal.ai.scan.database.Meal
 import com.ezt.meal.ai.scan.model.MeasurementUnits
 import com.ezt.meal.ai.scan.model.TotalNutrition
-import com.ezt.meal.ai.scan.screen.camera.CameraActivity.Companion.DEFAULT_INGREDIENTS
 
 
 object GlobalConstant {
@@ -124,7 +123,7 @@ object GlobalConstant {
             status = "success",
             message = "Food nutrition analyzed successfully", date = 0L))
 
-        listMeals.add(Meal( dishName = "Tacos(Beef)",
+        listMeals.add(Meal( dishName = "Tacos (Beef)",
             image = "",
             ingredients = listOf(),
             totalNutrition = TotalNutrition(solids = 320.0, liquids = 0.0, estimatedAmount = "320.0 g", carbs = 24.0, fats = 18.0, proteins = 16.0, calories = 320.0),
@@ -143,7 +142,7 @@ object GlobalConstant {
             healthyScore = -1,
             status = "success",
             message = "Food nutrition analyzed successfully", date = 0L))
-        listMeals.add(Meal( dishName = "Fried rice (chicken)",
+        listMeals.add(Meal( dishName = "Fried Rice (chicken)",
             image = "",
             ingredients = listOf(),
             totalNutrition = TotalNutrition(solids = 320.0, liquids = 0.0, estimatedAmount = "320.0 g", carbs = 24.0, fats = 18.0, proteins = 16.0, calories = 320.0),
@@ -161,7 +160,7 @@ object GlobalConstant {
             healthyScore = -1,
             status = "success",
             message = "Food nutrition analyzed successfully", date = 0L))
-        listMeals.add(Meal( dishName = "Dim Sum",
+        listMeals.add(Meal( dishName = "Dim Sum (Shrimp Dumpling)",
             image = "",
             ingredients = listOf(),
             totalNutrition = TotalNutrition(solids = 160.0, liquids = 0.0, estimatedAmount = "160.0 g", carbs = 20.0, fats = 4.0, proteins = 8.0, calories = 160.0),
@@ -170,7 +169,7 @@ object GlobalConstant {
             healthyScore = -1,
             status = "success",
             message = "Food nutrition analyzed successfully", date = 0L))
-        listMeals.add(Meal( dishName = "Banh Mi",
+        listMeals.add(Meal( dishName = "Banh Mi (Pork)",
             image = "",
             ingredients = listOf(),
             totalNutrition = TotalNutrition(solids = 400.0, liquids = 0.0, estimatedAmount = "320.0 g", carbs = 50.0, fats = 14.0, proteins = 18.0, calories = 400.0),
@@ -215,19 +214,10 @@ object GlobalConstant {
             healthyScore = -1,
             status = "success",
             message = "Food nutrition analyzed successfully", date = 0L))
-        listMeals.add(Meal( dishName = "Tacos(Beef)",
-            image = "",
-            ingredients = listOf(),
-            totalNutrition = TotalNutrition(solids = 320.0, liquids = 0.0, estimatedAmount = "320.0 g", carbs = 24.0, fats = 18.0, proteins = 16.0, calories = 320.0),
-            processingTime = 0.0,
-            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
-            healthyScore = -1,
-            status = "success",
-            message = "Food nutrition analyzed successfully", date = 0L))
         listMeals.add(Meal( dishName = "Fried Chicken (2 pcs)",
             image = "",
             ingredients = listOf(),
-            totalNutrition = TotalNutrition(solids = 520.0, liquids = 0.0, estimatedAmount = "520.0 g", carbs = 18.0, fats = 36.0, proteins = 28.0, calories = 520.0),
+            totalNutrition = TotalNutrition(solids = 320.0, liquids = 0.0, estimatedAmount = "320.0 g", carbs = 24.0, fats = 18.0, proteins = 16.0, calories = 320.0),
             processingTime = 0.0,
             measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
             healthyScore = -1,
@@ -273,15 +263,6 @@ object GlobalConstant {
             image = "",
             ingredients = listOf(),
             totalNutrition = TotalNutrition(solids = 260.0, liquids = 0.0, estimatedAmount = "260.0 g", carbs = 28.0, fats = 14.0, proteins = 5.0, calories = 260.0),
-            processingTime = 0.0,
-            measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
-            healthyScore = -1,
-            status = "success",
-            message = "Food nutrition analyzed successfully", date = 0L))
-        listMeals.add(Meal( dishName = "Tacos(Beef)",
-            image = "",
-            ingredients = listOf(),
-            totalNutrition = TotalNutrition(solids = 320.0, liquids = 0.0, estimatedAmount = "320.0 g", carbs = 24.0, fats = 18.0, proteins = 16.0, calories = 320.0),
             processingTime = 0.0,
             measurementUnits = MeasurementUnits(solids = "g", liquids = "ml", carbs = "g", fats = "g", proteins = "g", calories = "kcal"),
             healthyScore = -1,
@@ -404,7 +385,7 @@ object GlobalConstant {
             healthyScore = -1,
             status = "success",
             message = "Food nutrition analyzed successfully", date = 0L))
-        listMeals.add(Meal( dishName = "Chili Con Came",
+        listMeals.add(Meal( dishName = "Chili Con Carne",
             image = "",
             ingredients = listOf(),
             totalNutrition = TotalNutrition(solids = 300.0, liquids = 0.0, estimatedAmount = "300.0 g", carbs = 25.0, fats = 12.0, proteins = 20.0, calories = 300.0),
@@ -508,58 +489,58 @@ object GlobalConstant {
         return listMeals
     }
 
-    fun getTheMealImage(index : Int = 0) : Int {
-       return when(index) {
-            0 -> R.drawable.p1
-            1 -> R.drawable.p2
-            2 -> R.drawable.p3
-            3 -> R.drawable.p4
-            4 -> R.drawable.p5
-            5 -> R.drawable.p6
-            6 -> R.drawable.p7
-            7 -> R.drawable.p8
-            8 -> R.drawable.p9
-            9 -> R.drawable.p10
-            10 -> R.drawable.p11
-            11 -> R.drawable.p12
-            12 -> R.drawable.p13
-            13 -> R.drawable.p14
-            14 -> R.drawable.p15
-            15 -> R.drawable.p16
-            16 -> R.drawable.p17
-            17 -> R.drawable.p18
-            18 -> R.drawable.p19
-            19 -> R.drawable.p20
-            20 -> R.drawable.p21
-            21 -> R.drawable.p22
-            22 -> R.drawable.p23
-            23 -> R.drawable.p24
-            24 -> R.drawable.p25
-            25 -> R.drawable.p26
-            26 -> R.drawable.p27
-            27 -> R.drawable.p28
-            28 -> R.drawable.p29
-            29 -> R.drawable.p30
-            30 -> R.drawable.p31
-            31 -> R.drawable.p32
-            32 -> R.drawable.p33
-            33 -> R.drawable.p34
-            34 -> R.drawable.p35
-            35 -> R.drawable.p36
-            36 -> R.drawable.p37
-            37 -> R.drawable.p38
-            38 -> R.drawable.p39
-            39 -> R.drawable.p40
-            40 -> R.drawable.p41
-            41 -> R.drawable.p42
-            42 -> R.drawable.p43
-            43 -> R.drawable.p44
-            44 -> R.drawable.p45
-            45 -> R.drawable.p46
-            46 -> R.drawable.p47
-            47 -> R.drawable.p48
-            48 -> R.drawable.p49
-            49 -> R.drawable.p50
+    fun getTheMealImage(dishName: String = "Pizza Margherita") : Int {
+       return when(dishName) {
+            "Pizza Margherita" -> R.drawable.p1
+            "Cheeseburger" -> R.drawable.p2
+           "Sushi (Salmon Roll)" -> R.drawable.p3
+            "Pad Thai" -> R.drawable.p4
+            "Pho Bo (Beef Noodle Soup)"-> R.drawable.p5
+            "Chicken Curry" -> R.drawable.p6
+            "Fish and Chips" -> R.drawable.p7
+            "Caesar Salad" -> R.drawable.p8
+            "Spaghetti Carbonara" -> R.drawable.p9
+            "Tacos (Beef)" -> R.drawable.p10
+            "Lasagna" -> R.drawable.p11
+            "Fried Rice (chicken)" -> R.drawable.p12
+            "Ramen" -> R.drawable.p13
+            "Dim Sum (Shrimp Dumpling)" -> R.drawable.p14
+           "Banh Mi (Pork)" -> R.drawable.p15
+            "Steak (Ribeye 200g)" -> R.drawable.p16
+            "Burrito (Bean & Cheese)" -> R.drawable.p17
+             "Pancakes (with Syrup)" -> R.drawable.p18
+             "Tom Yum Soup"-> R.drawable.p19
+            "Fried Chicken (2 pcs)" -> R.drawable.p20
+            "Grilled Cheese Sandwich" -> R.drawable.p21
+            "Kimchi Stew (Kimchi-jjigae)" -> R.drawable.p22
+            "Falafel Sandwich" -> R.drawable.p23
+            "Biryani (Chicken)" -> R.drawable.p24
+            "Croissant" -> R.drawable.p25
+            "Donut (Glazed)" -> R.drawable.p26
+            "French Fries (Medium)" -> R.drawable.p27
+            "Greek Salad"-> R.drawable.p28
+            "Butter Chicken" -> R.drawable.p29
+            "Hot Dog" -> R.drawable.p30
+            "Macaroni and Cheese" -> R.drawable.p31
+            "Spring Rolls (Fresh)" -> R.drawable.p32
+            "Tiramisu" -> R.drawable.p33
+            "Paella" -> R.drawable.p34
+            "Beef Stew" -> R.drawable.p35
+            "Bagel with Cream Cheese" -> R.drawable.p36
+            "Waffles" -> R.drawable.p37
+            "Miso Soup" -> R.drawable.p38
+            "Peking Duck (Wrap)" -> R.drawable.p39
+            "Chili Con Carne" -> R.drawable.p40
+            "Egg Benedict" -> R.drawable.p41
+            "Hummus (with Pita)" -> R.drawable.p42
+            "Ratatouille" -> R.drawable.p43
+            "Gnocchi" -> R.drawable.p44
+            "Ceviche" -> R.drawable.p45
+            "Bibimbap" -> R.drawable.p46
+            "Kebab" -> R.drawable.p47
+            "Clam Chowder" -> R.drawable.p48
+            "Chicken Parmesan" -> R.drawable.p49
+            "Mango Sticky Rice" -> R.drawable.p50
             else -> R.drawable.p1
         }
     }

@@ -4,18 +4,22 @@ import android.content.Intent
 import android.content.res.Configuration
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.viewbinding.ViewBinding
+import com.ezt.meal.ai.scan.AppStateListener
+import com.ezt.meal.ai.scan.MyApplication
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import com.ezt.meal.ai.scan.R
 import com.ezt.meal.ai.scan.screen.home.MainActivity
+import com.ezt.meal.ai.scan.screen.welcome.WelcomeActivity
 import com.ezt.meal.ai.scan.utils.Common
 
 
@@ -23,7 +27,7 @@ typealias Inflate<T> = (LayoutInflater) -> T
 
 @Suppress("DEPRECATION")
 abstract class BaseActivity<T : ViewBinding>(private val inflater: Inflate<T>) :
-    AppCompatActivity() {
+    AppCompatActivity(), AppStateListener {
     protected val binding: T by lazy { inflater(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -104,7 +108,35 @@ abstract class BaseActivity<T : ViewBinding>(private val inflater: Inflate<T>) :
         }
     }
 
+    override fun onAppReturnedToForeground() {
+        val totalTime = (System.currentTimeMillis() - now) / 1000L
+        println("${this::class.java.simpleName}: App returned to foreground and $totalTime and isHomeActivity: $isHomeActivity")
+
+        android.os.Handler(Looper.getMainLooper()).post {
+            val currentTop = MyApplication.getInstance().currentActivity
+            if (this != currentTop) {
+                println("${this::class.java.simpleName}: is not the top ($currentTop)")
+                return@post
+            }
+
+            if(totalTime >= 60 * 30 || MyApplication.isUnderMemory) {
+                // App was in background too long
+                MyApplication.isUnderMemory = false
+            } else if (totalTime >= 10 && isHomeActivity) {
+                println("${this::class.java.simpleName}: launching WelcomeActivity")
+                startActivity(Intent(this, WelcomeActivity::class.java))
+            }
+        }
+    }
+
+    override fun onAppWentToBackground() {
+        Log.d(TAG, "${this::class.java.simpleName}: App went to background")
+        now = System.currentTimeMillis()
+    }
+
     companion object {
+        private var now = 0L
+        var isHomeActivity = false
         private var TAG = BaseActivity::class.java.simpleName
         var lastKnownUiMode = Configuration.UI_MODE_NIGHT_NO // default light mode
     }

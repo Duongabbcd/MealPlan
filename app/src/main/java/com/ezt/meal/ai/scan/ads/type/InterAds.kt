@@ -108,11 +108,12 @@ object InterAds {
         println("showSelectedAds: ${activity.isDestroyed} and ${activity.isFinishing}")
 
         try {
-            val prefs = Prefs(MyApplication.instance)
+            val prefs = Prefs(MyApplication.getInstance())
             if (prefs.premium || prefs.isRemoveAd) {
                 callback.invoke(false)
                 return
             }
+
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -239,7 +240,7 @@ object InterAds {
         interPreloadMap[alias] = mutableLiveData
 
         val wrapper = interPreloadMap[alias]?.value
-        if (Prefs(MyApplication.instance).premium || Prefs(MyApplication.instance).isRemoveAd) {
+        if (Prefs(MyApplication.getInstance()).premium || Prefs(MyApplication.getInstance()).isRemoveAd) {
             wrapper?.state = -1
             interPreloadMap[alias]?.postValue(wrapper)
             return
@@ -373,7 +374,7 @@ object InterAds {
         interPreloadMap[alias] = mutableLiveData
 
         val wrapper = interPreloadMap[alias]?.value
-        if (Prefs(MyApplication.instance).premium || Prefs(MyApplication.instance).isRemoveAd) {
+        if (Prefs(MyApplication.getInstance()).premium || Prefs(MyApplication.getInstance()).isRemoveAd) {
             wrapper?.state = -1
             interPreloadMap[alias]?.postValue(wrapper)
             return
@@ -495,7 +496,7 @@ object InterAds {
             return false
         }
 
-        if (Prefs(MyApplication.instance).premium || Prefs(MyApplication.instance).isRemoveAd) {
+        if (Prefs(MyApplication.getInstance()).premium || Prefs(MyApplication.getInstance()).isRemoveAd) {
             onLoadFailed?.invoke()
             return false
         }
@@ -585,7 +586,7 @@ object InterAds {
             return false
         }
 
-        if (Prefs(MyApplication.instance).premium || Prefs(MyApplication.instance).isRemoveAd) {
+        if (Prefs(MyApplication.getInstance()).premium || Prefs(MyApplication.getInstance()).isRemoveAd) {
             onLoadFailed?.invoke()
             return false
         }

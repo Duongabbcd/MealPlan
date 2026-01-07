@@ -2,7 +2,7 @@ package com.ezt.meal.ai.scan.screen.detail
 
 import android.content.Intent
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.graphics.Matrix
 import android.graphics.pdf.PdfDocument
 import android.os.Bundle
@@ -10,6 +10,9 @@ import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.TextAppearanceSpan
 import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
@@ -25,15 +28,14 @@ import com.ezt.meal.ai.scan.databinding.ActivityDetailBinding
 import com.ezt.meal.ai.scan.model.Ingredient
 import com.ezt.meal.ai.scan.model.NutritionResponse
 import com.ezt.meal.ai.scan.screen.base.BaseActivity
-import com.ezt.meal.ai.scan.screen.camera.CameraActivity
 import com.ezt.meal.ai.scan.screen.detail.adapter.IngredientAdapter
+import com.ezt.meal.ai.scan.screen.detail.customview.MacroCircleView
 import com.ezt.meal.ai.scan.screen.language.GlobalConstant
 import com.ezt.meal.ai.scan.utils.Common.gone
 import com.ezt.meal.ai.scan.utils.Common.visible
 import com.ezt.meal.ai.scan.viewmodel.MealViewModel
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
-import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
 import java.security.MessageDigest
@@ -54,7 +56,7 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>(ActivityDetailBinding
         intent.getStringExtra("imagePath") ?: ""
     }
     private val imageDrawable by lazy {
-        intent.getIntExtra("imageDrawable", 0)
+        intent.getStringExtra("imageDrawable") ?: ""
     }
     private val mealDate by lazy {
         intent.getLongExtra("mealDate", -1L)
@@ -281,105 +283,89 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>(ActivityDetailBinding
 
 
     private fun generatePdfAndShare() {
-        // 1. Get the view you want to convert (your meal card container)
-        val pdfView = layoutInflater.inflate(R.layout.layout_pdf_meal, null)
 
+        // Ensure AppBar is fully expanded for PDF
+        binding.appBarLayout.setExpanded(true, false)
 
-        pdfView.findViewById<TextView>(R.id.mealName).text = defaultMeal.dishName
-        pdfView.findViewById<TextView>(R.id.totalCalo).text =
-            totalNutrition.calories.toInt().toString()
-        pdfView.findViewById<TextView>(R.id.kcal).text = measuredUnit.calories
+        val appBar = binding.appBarLayout
+        val scroll = binding.nestedScrollView
 
+        // 1. Measure both views without detaching
+        val width = resources.displayMetrics.widthPixels
 
-        val proteinProcess = totalNutrition.proteins * 100 / totalCalories
-        pdfView.findViewById<TextView>(R.id.proteinPercent).text =
-            round(proteinProcess * 100 / 100).toString().plus(" %")
-        pdfView.findViewById<TextView>(R.id.proteinValue).text =
-            totalNutrition.proteins.toString().plus(" ${measuredUnit.proteins}")
-        pdfView.findViewById<ProgressBar>(R.id.proteinProgress).progress = proteinProcess.toInt()
-
-        val carbProcess = totalNutrition.carbs * 100 / totalCalories
-        pdfView.findViewById<TextView>(R.id.carbPercent).text =
-            round(carbProcess * 100 / 100).toString().plus(" %")
-        pdfView.findViewById<TextView>(R.id.carbValue).text =
-            totalNutrition.carbs.toString().plus(" ${measuredUnit.carbs}")
-        pdfView.findViewById<ProgressBar>(R.id.carbProgress).progress = carbProcess.toInt()
-
-        val fatProcess = totalNutrition.fats * 100 / totalCalories
-        pdfView.findViewById<TextView>(R.id.fatPercent).text =
-            round(fatProcess * 100 / 100).toString().plus(" %")
-        pdfView.findViewById<TextView>(R.id.fatValue).text =
-            totalNutrition.fats.toString().plus(" ${measuredUnit.fats}")
-        pdfView.findViewById<ProgressBar>(R.id.fatProgress).progress = fatProcess.toInt()
-
-        applyStyle(
-            pdfView.findViewById<TextView>(R.id.mealDetailName),
-            resources.getString(R.string.meal_name),
-            defaultMeal.dishName
-        )
-        applyStyle(
-            pdfView.findViewById<TextView>(R.id.mealDetailIngredients),
-            resources.getString(R.string.meal_ingredient),
-            defaultMeal.ingredients.joinToString(", ") {
-                it.foodName
-            })
-
-        pdfView.findViewById<RecyclerView>(R.id.allIngredients).adapter = ingredientAdapter
-        applyStyle(
-            pdfView.findViewById<TextView>(R.id.mealEnergy),
-            resources.getString(R.string.meal_energy),
-            totalNutrition.calories.toInt().toString().plus(" ${measuredUnit.calories}")
-        )
-
-        pdfView.findViewById<TextView>(R.id.carbonValue).text =
-            totalNutrition.carbs.toString().plus(" ${measuredUnit.carbs}")
-        pdfView.findViewById<TextView>(R.id.proteinValue).text =
-            totalNutrition.proteins.toString().plus(" ${measuredUnit.proteins}")
-        pdfView.findViewById<TextView>(R.id.fatTotalValue).text =
-            totalNutrition.fats.toString().plus(" ${measuredUnit.fats}")
-        pdfView.findViewById<TextView>(R.id.solidValue).text =
-            totalNutrition.solids.toString().plus(" ${measuredUnit.solids}")
-        pdfView.findViewById<TextView>(R.id.liquidValue).text =
-            totalNutrition.liquids.toString().plus(" ${measuredUnit.liquids}")
-
-
-        // 2. Measure and layout the view
-        val displayMetrics = resources.displayMetrics
-        pdfView.measure(
-            View.MeasureSpec.makeMeasureSpec(displayMetrics.widthPixels, View.MeasureSpec.EXACTLY),
+        appBar.measure(
+            View.MeasureSpec.makeMeasureSpec(width, View.MeasureSpec.EXACTLY),
             View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
         )
-        pdfView.layout(0, 0, pdfView.measuredWidth, pdfView.measuredHeight)
+        appBar.layout(0, 0, appBar.measuredWidth, appBar.measuredHeight)
 
-        // 3. Create PDF document
+        scroll.measure(
+            View.MeasureSpec.makeMeasureSpec(width, View.MeasureSpec.EXACTLY),
+            View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+        )
+        scroll.layout(0, 0, scroll.measuredWidth, scroll.measuredHeight)
+
+        val totalHeight = appBar.measuredHeight + scroll.measuredHeight
+
+        // 2. PDF pagination
+        val pageHeight = 1600
         val document = PdfDocument()
-        val pageInfo = PdfDocument.PageInfo.Builder(pdfView.width, pdfView.height, 1).create()
-        val page = document.startPage(pageInfo)
+        var pageNumber = 1
+        var yOffset = 0
 
-        // 4. Draw the view onto the PDF page
-        val canvas = page.canvas
-        pdfView.draw(canvas)
-        document.finishPage(page)
+        while (yOffset < totalHeight) {
 
-        // 5. Save PDF to cache directory
-        val pdfFile = File(this@DetailActivity.cacheDir, "${defaultMeal.dishName}.pdf")
+            val pageInfo = PdfDocument.PageInfo.Builder(
+                width,
+                pageHeight,
+                pageNumber++
+            ).create()
+
+            val page = document.startPage(pageInfo)
+            val canvas = page.canvas
+
+            canvas.save()
+
+            // Draw AppBar
+            canvas.translate(0f, -yOffset.toFloat())
+            appBar.draw(canvas)
+
+            // Draw scroll content BELOW AppBar
+            canvas.translate(0f, appBar.measuredHeight.toFloat())
+            scroll.draw(canvas)
+
+            canvas.restore()
+
+            document.finishPage(page)
+            yOffset += pageHeight
+        }
+
+        // 3. Save
+        val pdfFile = File(cacheDir, "${defaultMeal.dishName}.pdf")
         document.writeTo(FileOutputStream(pdfFile))
         document.close()
 
-        // 6. Share the PDF using Intent
+        // 4. Share
         val uri = FileProvider.getUriForFile(
             this,
-            "${this.packageName}.fileprovider",
+            "$packageName.fileprovider",
             pdfFile
         )
 
-        val shareIntent = Intent(Intent.ACTION_SEND).apply {
-            type = "application/pdf"
-            putExtra(Intent.EXTRA_STREAM, uri)
-            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-        }
-        startActivity(Intent.createChooser(shareIntent, "Share Meal PDF"))
+        startActivity(
+            Intent.createChooser(
+                Intent(Intent.ACTION_SEND).apply {
+                    type = "application/pdf"
+                    putExtra(Intent.EXTRA_STREAM, uri)
+                    addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                },
+                "Share Meal PDF"
+            )
+        )
     }
+
+
+
 
     private fun formatTimestamp(timestamp: Long): String {
         // Use proper pattern: HH:mm - dd/MM/yyyy (day/month/year)

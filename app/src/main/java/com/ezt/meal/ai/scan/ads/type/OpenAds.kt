@@ -131,7 +131,7 @@ object OpenAds {
 
     fun showOpenAds(context: Activity, callback: () -> Unit) {
         try {
-            val prefs = Prefs(MyApplication.instance)
+            val prefs = Prefs(MyApplication.getInstance())
             if (prefs.premium || prefs.isRemoveAd) {
                 callback.invoke()
                 return

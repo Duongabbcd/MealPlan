@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.ezt.meal.ai.scan.R
 import com.ezt.meal.ai.scan.databinding.ItemDateBinding
+import com.ezt.meal.ai.scan.utils.Common
 import java.time.Month
 import java.time.format.TextStyle
 import java.util.Locale
@@ -18,6 +19,11 @@ class RecentDateAdapter(
 
     private var selectedPosition: Int = RecyclerView.NO_POSITION
     private lateinit var context: Context
+
+    private val locale by lazy {
+        val languageCode = Common.getPreLanguage(context) // or get it however you saved it
+        Locale(languageCode)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecentDateViewHolder {
         context = parent.context
@@ -42,7 +48,7 @@ class RecentDateAdapter(
         fun bind(date: RecentDate, position: Int) {
             binding.apply {
                 val monthName = Month.of(date.month)
-                    .getDisplayName(TextStyle.SHORT, Locale.getDefault())
+                    .getDisplayName(TextStyle.SHORT, locale)
                 recentMonth.text = monthName
                 recentDay.text = date.day.toString()
 

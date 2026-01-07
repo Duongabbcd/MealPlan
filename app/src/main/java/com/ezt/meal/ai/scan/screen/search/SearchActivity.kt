@@ -69,7 +69,7 @@ class SearchActivity: BaseActivity<ActivitySearchBinding>(ActivitySearchBinding:
             })
 
             searchIcon.setOnClickListener {
-                model.getMealsByName(searchMeal)
+                model.getMealsByName(searchMeal.trim())
             }
 
         }

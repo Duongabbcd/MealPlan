@@ -65,7 +65,6 @@ class RecentFragment : BaseFragment<FragmentRecentBinding>(FragmentRecentBinding
         recentMealAdapter = RecentMealAdapter(false)
 
         binding.apply {
-            updateSearchList()
             allItems.adapter = recentMealAdapter
             resetButton.gone()
             setupDate()
@@ -227,5 +226,10 @@ class RecentFragment : BaseFragment<FragmentRecentBinding>(FragmentRecentBinding
 
             didAutoScroll = true
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateSearchList()
     }
 }

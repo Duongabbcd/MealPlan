@@ -14,6 +14,7 @@ import android.os.Handler
 import android.os.Looper
 import android.provider.Settings
 import android.util.Log
+import android.view.Surface
 import android.view.View
 import android.view.ViewOutlineProvider
 import android.view.WindowInsets
@@ -68,7 +69,7 @@ class CameraActivity :
 
     private lateinit var imageCapture: ImageCapture
     private var camera: Camera? = null
-    private var rotation = 1
+    private var imageRotation = 1
     private val pickImageLauncher = registerForActivityResult(
         ActivityResultContracts.GetContent()
     ) { uri: Uri? ->
@@ -188,10 +189,10 @@ class CameraActivity :
             reverseCam.setOnClickListener {
                  if (lensFacing == CameraSelector.LENS_FACING_BACK) {
                      lensFacing = CameraSelector.LENS_FACING_FRONT
-                     rotation = 2
+                     imageRotation = 2
                 } else {
                      lensFacing = CameraSelector.LENS_FACING_BACK
-                     rotation = 1
+                     imageRotation = 1
                 }
 
                 // Restart camera with the new lens
@@ -238,7 +239,7 @@ class CameraActivity :
                             putExtra("defaultMeal", defaultMeal)
                             putExtra("imagePath", result.data.queue.input.first().url)
                             putExtra("isDetected", true)
-                            putExtra("rotation", rotation)
+                            putExtra("rotation", imageRotation)
                         })
                     }, 500L)
                 }
@@ -275,9 +276,9 @@ class CameraActivity :
 
         cameraProviderFuture.addListener({
             val cameraProvider = cameraProviderFuture.get()
-
+            val rotation = binding.previewView.display?.rotation ?: Surface.ROTATION_0
             val preview = Preview.Builder()
-                .setTargetRotation(binding.previewView.display.rotation)
+                .setTargetRotation(rotation)
                 .build()
                 .apply {
                     setSurfaceProvider(binding.previewView.surfaceProvider)
@@ -297,7 +298,7 @@ class CameraActivity :
                     if (isFlash) ImageCapture.FLASH_MODE_ON
                     else ImageCapture.FLASH_MODE_OFF
                 )
-                .setTargetRotation(binding.previewView.display.rotation)
+                .setTargetRotation(rotation)
                 .build()
 
             // Dynamically choose camera based on lensFacing

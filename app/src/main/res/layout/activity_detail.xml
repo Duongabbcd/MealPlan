@@ -108,6 +108,7 @@
 
     <!-- Overlay content -->
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
@@ -629,7 +630,8 @@
             <RelativeLayout
                 android:id="@+id/liquidLayout"
                 app:layout_constraintTop_toBottomOf="@id/solidLayout"
-                android:paddingVertical="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_56sdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -667,7 +669,7 @@
         android:layout_marginHorizontal="@dimen/_20sdp"
         android:layout_marginBottom="@dimen/_20sdp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_44sdp"
         android:layout_gravity="bottom"/>
 
 

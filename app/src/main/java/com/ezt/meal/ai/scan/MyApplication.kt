@@ -203,9 +203,14 @@ class MyApplication : Application(), Application.ActivityLifecycleCallbacks {
         private const val TAG = "MyApplication"
         lateinit var mFirebaseAnalytics: FirebaseAnalytics
         private lateinit var applicationScope: CoroutineScope
-        lateinit var instance: MyApplication
+        private var instance: MyApplication? = null
+
 
         var isUnderMemory = false
+
+        fun getInstance(): MyApplication {
+            return instance!!
+        }
 
         @JvmStatic
         fun initROAS(revenue: Long, currency: String) {
