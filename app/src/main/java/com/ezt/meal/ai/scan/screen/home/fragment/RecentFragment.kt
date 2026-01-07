@@ -79,6 +79,7 @@ class RecentFragment : BaseFragment<FragmentRecentBinding>(FragmentRecentBinding
 
             scanBtn.setOnClickListener {
                 withSafeContext { ctx ->
+                    didAutoScroll = false
                     startActivity(Intent(ctx, CameraActivity::class.java))
                 }
             }
@@ -197,6 +198,7 @@ class RecentFragment : BaseFragment<FragmentRecentBinding>(FragmentRecentBinding
         }
 
         recentDateAdapter.submitList(allRecentDates) {
+            println("recentDateAdapter: $todayIndex")
             if (todayIndex != -1) {
                 recentDateAdapter.setSelectedPosition(todayIndex)
                 autoScrollToToday(todayIndex)

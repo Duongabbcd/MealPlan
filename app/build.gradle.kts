@@ -20,19 +20,19 @@ android {
         minSdk = 28
         targetSdk = 36
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-//    signingConfigs {
-//        create("release") {
-//            storeFile = rootProject.file("keystore/piano2.jks")
-//            storePassword = "12345678"
-//            keyAlias = "piano2025"
-//            keyPassword = "12345678"
-//        }
-//    }
+    signingConfigs {
+        create("release") {
+            storeFile = rootProject.file("keystores/key_store_new.jks")
+            storePassword = "123456"
+            keyAlias = "key0"
+            keyPassword = "123456"
+        }
+    }
 
     buildTypes {
         release {
@@ -42,7 +42,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-//            signingConfig = signingConfigs.getByName("release")
+            signingConfig = signingConfigs.getByName("release")
         }
     }
 

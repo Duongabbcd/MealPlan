@@ -405,7 +405,7 @@ class IntroFragmentNew : Fragment() {
                 binding.frNative.visible()
                 activity?.let { it ->
                     LanguageActivity.showNative(it,
-                        NativeAds.ALIAS_NATIVE_INTRO_5,
+                        NativeAds.ALIAS_NATIVE_INTRO_4,
                         binding.frNative,
                         onLoadDone = {
                             binding.mLoadingView.root.visibility = View.GONE
@@ -417,10 +417,10 @@ class IntroFragmentNew : Fragment() {
                             }
                             NativeAds.preloadNativeAds(
                                 it,
-                                alias = NativeAds.ALIAS_NATIVE_INTRO_5,
-                                adId = NativeAds.NATIVE_INTRO_5
+                                alias = NativeAds.ALIAS_NATIVE_INTRO_4,
+                                adId = NativeAds.NATIVE_INTRO_4
                             )
-                            LanguageActivity.showNative(it, alias = NativeAds.ALIAS_NATIVE_INTRO_5,
+                            LanguageActivity.showNative(it, alias = NativeAds.ALIAS_NATIVE_INTRO_4,
                                 binding.frNative, false, {
                                     binding.mLoadingView.root.visibility = View.GONE
                                 }, {

@@ -70,7 +70,7 @@ object GlobalConstant {
             message = "Food nutrition analyzed successfully", date = 0L))
 
 
-        listMeals.add(Meal( dishName = "Pho Bo",
+        listMeals.add(Meal( dishName = "Pho Bo (Beef Noodle Soup)",
             image = "",
             ingredients = listOf(),
             totalNutrition = TotalNutrition(solids = 350.0, liquids = 100.0, estimatedAmount = "270.0 g", carbs = 22.0, fats = 52.0, proteins = 6.0, calories = 350.0),
