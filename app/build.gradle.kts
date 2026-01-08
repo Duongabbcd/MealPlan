@@ -27,7 +27,7 @@ android {
 
     signingConfigs {
         create("release") {
-            storeFile = rootProject.file("keystores/key_store_new.jks")
+            storeFile = rootProject.file("keystore/key_store_new.jks")
             storePassword = "123456"
             keyAlias = "key0"
             keyPassword = "123456"
@@ -130,9 +130,9 @@ dependencies {
     implementation("com.google.android.gms:play-services-ads:24.9.0") // or latest
     implementation ("com.airbnb.android:lottie:6.6.6")
 
-    implementation("androidx.camera:camera-camera2:1.3.4")
-    implementation("androidx.camera:camera-lifecycle:1.3.4")
-    implementation("androidx.camera:camera-view:1.3.4")
+    implementation("androidx.camera:camera-camera2:1.4.1")
+    implementation("androidx.camera:camera-lifecycle:1.4.1")
+    implementation("androidx.camera:camera-view:1.4.1")
 
     //ok http3
     implementation("com.squareup.retrofit2:retrofit:2.9.0")

@@ -47,7 +47,7 @@ class IntroActivityNew : BaseActivity<ActivityIntroNewBinding>(ActivityIntroNewB
 
         println("isIntroFullFail:$isIntroFullFail1")
         println("isIntroFullFail:${RemoteConfig.NATIVE_FULL_SCREEN_INTRO_070625}")
-        numberPage = 3
+        numberPage = 4
 
 
         introViewPagerAdapter = SlideAdapter(this)
